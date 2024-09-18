@@ -138,7 +138,7 @@ def process_and_predict(data, model):
                 'dukcapil_score', 'birthdate', 'fullname', 'nik', 'liveness_detection']]
         
         prediction = model.predict(X)[0]
-        threshold = 0.5
+        threshold = 0.75
         recommendation = "Loan at Risk - Recommended for further action" if prediction >= threshold else "Loan Not at Risk - No immediate action needed"
         
         results.append({
