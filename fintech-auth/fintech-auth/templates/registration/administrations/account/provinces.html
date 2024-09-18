@@ -1,0 +1,55 @@
+{% load static %}
+{% block javascript %}
+<script>
+$(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('{% csrf_token %}').attr('content'),
+            'Authorization': 'Bearer token'
+        },
+    });
+    $("#POB, #Provinsi").select2({
+        placeholder: "Cari Provinsi",
+        minimumInputLength: 2,
+        width: '100%',
+        cache: false,
+        ajax: {
+            url: function (params) {
+                return 'http://127.0.0.1:5000/api/v1/provinces/' + params.term;
+            },
+            type: "GET",
+            dataType: 'json',
+            delay: 250,
+        },
+    });
+    $("#Kecamatan").select2({
+        placeholder: "Cari Kecamatan",
+        minimumInputLength: 2,
+        width: '100%',
+        cache: false,
+        ajax: {
+            url: function (params) {
+                    return 'http://127.0.0.1:5000/api/v1/districts/' + $("#Provinsi").val();
+                },
+            type: 'GET',
+            dataType: 'json',
+            delay:250,
+        }
+    });
+    $("#Kelurahan").select2({
+        placeholder: "Cari Kelurahan",
+        minimumInputLength: 2,
+        width: '100%',
+        cache: false,
+        ajax: {
+            url: function (params) {
+                    return 'http://127.0.0.1:5000/api/v1/sub/districts/' + $("#Kecamatan").val();
+                },
+            type: 'GET',
+            dataType: 'json',
+            delay:250,
+        }
+    });
+});
+</script>
+{% endblock %}

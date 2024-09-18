@@ -1,0 +1,393 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                {% if messages %}
+                                    <div class="alert alert-danger">
+                                        {% for message in messages %}
+                                            <strong>{{ message }}</strong>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-6">
+                                <h2>Hallo, {{user.first_name}}</h2>
+                                Semoga Dalam Keberkahan الله سبحانه وتعالى
+                                <br></br>
+                                <small>Last Update Date/</small>
+                                <h4>Total Tabungan Rp. 0,00</h4>
+                                <h6>
+                                    Total Keuntungan Rp. 0,00
+                                    <button><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                </h6>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="row">
+                                    <div class="main_business">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <h3>
+                                                    Top Up
+                                                </h3>
+                                                <h6>Simpanan Wajib</h6>
+                                                <small class="text-muted">
+                                                    Transfer ke salah satu akun virtual berikut
+                                                </small>
+                                                <table class="text-finence text-center">
+                                                    <tbody class="text-center">
+                                                        <tr>
+                                                            <td>BNI Syariah &nbsp;</td>
+                                                            <td>028577499 &nbsp;</td>
+                                                            <td>
+                                                                <button onclick="navigator.clipboard.writeText('028577499')
+                                                                    .then(function(){
+                                                                    document.getElementById('insert1').innerHTML = '&#10003';
+                                                                    })">
+                                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                                </button>
+                                                                <span id="insert1">
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr></tr>
+                                                        <tr>
+                                                            <td>Mandiri Syariah &nbsp;</td>
+                                                            <td>62788899 &nbsp;</td>
+                                                            <td>
+                                                                <button onclick="navigator.clipboard.writeText('62788899')
+                                                                    .then(function(){
+                                                                    document.getElementById('insert2').innerHTML = '&#10003';
+                                                                    })">
+                                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                                </button>
+                                                                <span id="insert2">
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12   ">
+                                <div class="panel-body">
+                                    <div class="bs-stepper">
+                                        <div class="bs-stepper-header" role="tablist">
+                                        <!-- your steps here -->
+                                            <div class="step">
+                                                <span class="bs-stepper-circle-done">1</span>
+                                                <span class="bs-stepper-label">Pendaftaran</span>
+                                            </div>
+                                            <div class="line"></div>
+                                            <div class="step">
+                                                <span class="bs-stepper-circle">2</span>
+                                                <span class="bs-stepper-label">Setoran Awal</span>
+                                            </div>
+                                            <div class="line"></div>
+                                            <div class="step">
+                                                <span class="bs-stepper-circle">3</span>
+                                                <span class="bs-stepper-label">Ke-anggotaan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                <div class="panel-body">
+                                    <div class="text-center">
+                                        Pesan Dari Fintech
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for obj in data %}
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-7">
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Keanggotaan
+                                        </div>
+                                    </div>
+                                    <div class="panel-body" >
+                                        <form>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Status Anggota</label>
+                                                {% if not user.verify_status_user_related.member_verify_status_revision_profile_check %}
+                                                    <div class="col-sm-8" style="color: #990000">
+                                                        Calon Anggota
+                                                    </div>
+                                                {% else %}
+                                                    <div class="col-sm-8">
+                                                        Anggota
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">No. Rekening Anggota</label>
+                                                {% if not user.accountprofile.account_profile_cooperative_number %}
+                                                    <div class="col-sm-8" style="color: #990000">
+                                                        Belum Mengisi Profile
+                                                    </div>
+                                                {% else %}
+                                                    <div class="col-sm-8">
+                                                        {{user.accountprofile.account_profile_cooperative_number}}
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Setoran Pokok</label>
+                                                <div class="col-sm-8">
+                                                    {% if obj.deposit_member_payment_principal_status %}
+                                                        Lunas,
+                                                        <a style="color: #67b168">
+                                                        Rp. {{obj.deposit_member_payment_principal_amount|floatformat:'2'|intcomma}}
+                                                        </a>
+                                                    {% else %}
+                                                        <a style="color: #990000">
+                                                            Belum Lunas
+                                                        </a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Periode Setoran Wajib</label>
+                                                <div class="col-sm-8">
+                                                    {% if obj.is_past_due %}
+                                                        {{obj.deposit_member_payment_mandatory_period_end|timeuntil:obj.deposit_member_payment_mandatory_period_start }}
+                                                    {% else %}
+                                                        <a style="color: #990000">
+                                                            Anda Harus Melakukan Setoran Wajib
+                                                        </a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Setoran Wajib</label>
+                                                <div class="col-sm-4">
+                                                    {% if obj.deposit_member_payment_mandatory_status %}
+                                                        <a style="color: #67b168">
+                                                        Rp. {{obj.deposit_member_payment_mandatory_amount|floatformat:'2'|intcomma}}
+                                                        </a>
+                                                    {% else %}
+                                                        <a style="color: red">
+                                                            Belum Melakukan Setoran
+                                                        </a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Bayar Setoran Pokok / Wajib</label>
+                                                <div class="col-sm-4">
+                                                    <a href="{% url 'deposit:create-deposit' %}" class="btn-sm btn-info text-right">Pembayaran</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <hr>
+                                        <form>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Angsuran</label>
+                                                <div class="col-sm-4">
+                                                    Rp. 0,00 / Bulan
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <a href="#" class="btn-sm btn-info text-right">Pembayaran</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Ziswaf</label>
+                                                <div class="col-sm-8">
+                                                    <a href="#" class="btn-sm btn-info text-right">Salurkan</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading text-center">
+                                            Pertanyaan Seputar Koperasi
+                                        </div>
+                                        <div class="panel-body" >
+                                            <div class="mb-3 form-group row text-center">
+                                                <a href="{% url 'account:update-account-bank'%}"
+                                                   class="btn btn-group-lg btn-info">
+                                                    Lengkapi Akun Bank
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-body" >
+                                            <div class="mb-3 form-group row text-center">
+                                                <a href="{% url 'account:update-account-bank'%}"
+                                                   class="btn btn-group-lg btn-info">
+                                                    Lengkapi Akun Bank
+                                                </a>
+                                                <a class="btn btn-success">Lihat Semua</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Transaksi
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Periode Setoran Wajib</label>
+                                            <div class="col-sm-6">
+                                                {% if obj.is_past_due %}
+                                                    {{obj.deposit_member_payment_mandatory_period_end|timeuntil:obj.deposit_member_payment_mandatory_period_start }}
+                                                {% else %}
+                                                    <a style="color: #990000">
+                                                        Anda Harus Melakukan Setoran Wajib
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Setoran Pokok</label>
+                                            <div class="col-sm-6">
+                                                {% if obj.deposit_member_payment_principal_status %}
+                                                    Rp. {{obj.deposit_member_payment_principal_amount|floatformat:'2'|intcomma}}
+                                                {% else %}
+                                                    <a style="color: #990000">
+                                                        Belum Lunas
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Setoran Wajib</label>
+                                            <div class="col-sm-6">
+                                                {% if obj.deposit_member_payment_mandatory_status %}
+                                                    Rp. {{obj.deposit_member_payment_mandatory_amount|floatformat:'2'|intcomma}}
+                                                {% else %}
+                                                    <a style="color: red">
+                                                        Belum Melakukan Setoran
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Pembagian SHU</label>
+                                            <div class="col-sm-6">
+                                                <a>Rp. Belom</a>
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Penarikan Dana</label>
+                                            <div class="col-sm-6">
+                                                <a>Rp. Belom</a>
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Ziswaf</label>
+                                            <div class="col-sm-6">
+                                                <a>Rp. Belom</a>
+                                            </div>
+                                        </div>
+                                        </hr>
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Total Tabungan</label>
+                                            <div class="col-sm-6">
+                                                {% if obj.deposit_member_payment_principal_status %}
+                                                    Rp. {{ obj.deposit_member_payment_principal_amount|add:obj.deposit_member_payment_mandatory_amount|floatformat:'2'|intcomma }}
+                                                {% else %}
+                                                    <a style="color: #990000">
+                                                        Belum Lunas
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Total Pembagian SHU</label>
+                                            <div class="col-sm-6">
+                                                <a>Rp. Belom</a>
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 form-group row">
+                                            <label for="period" class="col-sm-6 col-form-label">Total Penarikan Dana</label>
+                                            <div class="col-sm-6">
+                                                <a>Rp. Belom</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

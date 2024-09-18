@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  scheduler:
+    build: .
+    command: uvicorn asgi:app --debug --reload --port 5001 --host 0.0.0.0
+    volumes:
+      - ./fintech_scheduler/:/usr/src/fintech_scheduler/
+    ports:
+      - 5001:5001
+#    networks:
+#      - sample-network
+#  redis:
+#    image: redis
+#    networks:
+#      - sample-network
+#
+networks:
+  default:
+    name: sample-network

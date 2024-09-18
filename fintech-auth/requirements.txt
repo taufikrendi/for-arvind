@@ -1,0 +1,22 @@
+asgiref==3.3.1
+cryptography==2.8
+confluent-kafka[avro, json]==1.7.0
+lz4==3.1.3
+crc32c==2.2
+Django==3.1.5
+django-autofixture==0.12.1
+django-utils-six==2.0
+fastapi==0.63.0
+passlib[bcrypt]==1.7.4
+pip==21.1.2
+psycopg2-binary==2.8.6
+python-jose==3.2.0
+python-daemon==2.3.0
+python-decouple==3.4
+python-multipart==0.0.5
+python-rocksdb==0.7.0
+requests==2.25.1
+urllib3==1.26.3
+uvicorn==0.13.3
+wheel==0.35.1
+whitenoise==5.2.0

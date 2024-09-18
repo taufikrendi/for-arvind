@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-212.4746.96">
+    <data-source name="mydatabase" uuid="1523561d-e052-4cc8-a8d4-54dbf5d265ea">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <auth-provider>no-auth</auth-provider>
+      <schema-mapping />
+    </data-source>
+    <data-source name="default" uuid="118b8411-7b6d-4e8b-844b-94c4c794c204">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <auth-provider>no-auth</auth-provider>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Django funds_master" uuid="1f8f2fed-e924-4de1-b2bf-6d2d01a3572d">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>funds_master_db</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Django transaction_slave" uuid="92e0b5a1-a3eb-4177-b1b9-1a6f6a420bed">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>transaction_master_db</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Django default" uuid="0e5bcd7f-3b76-48a0-a507-1ab408506073">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>account_master_db</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Django funds_slave" uuid="caec0808-0123-47ac-b63b-e056a47c1616">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>funds_master_db</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Django default_slave" uuid="6cf3c2fe-e65c-4dbc-b78b-00a28ce4b5b8">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>account_master_db</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

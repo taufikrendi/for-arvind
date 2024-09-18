@@ -1,0 +1,198 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                {% if messages %}
+                                    <div class="alert alert-success">
+                                        {% for message in messages %}
+                                            <strong>{{ message }}</strong>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-lg-12">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Transaksi Deposit Anggota
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body" >
+                                        <div class="text-right">
+                                            <form method="post">
+                                                {% csrf_token %}
+                                                 <div class="text-center">
+                                                     <label>Dari Tanggal</label>
+                                                     <input type="date" id="start_date" name="start_date">
+                                                     &nbsp;
+                                                     <label>Sampai Tanggal</label>
+                                                     <input type="date" id="end_date" name="end_date">
+                                                     &nbsp;
+                                                     <label>Jenis Transaksi?</label>
+                                                     <select id="transaction" name="transaction">
+                                                         <option selected="selected" disabled>--Pilih--</option>
+                                                         <option value="Credit">Credit</option>
+                                                         <option value="Debit">Debit</option>
+                                                         <option value="Transfer">Transfer</option>
+                                                         <option value="Pembayaran">Pembayaran</option>
+                                                         <option value="Investasi">Investasi</option>
+                                                     </select>
+                                                     &nbsp;
+                                                     <label>Status Verifikasi?</label>
+                                                     <select id="verification" name="verification">
+                                                         <option selected="selected" disabled>--Pilih--</option>
+                                                         <option value="Yes">Yes</option>
+                                                         <option value="No">No</option>
+                                                     </select>
+                                                     <button class="btn-info">Filter</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        </br>
+                                        <form>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr class="text-center">
+                                                            <td>Kode Transaski</td>
+                                                            <td>Tipe Transaksi</td>
+                                                            <td>Tanggal Transaksi</td>
+                                                            <td>Nama Bank</td>
+                                                            <td>No. Rekening Bank</td>
+                                                            <td>Jumlah Masuk / Keluar</td>
+                                                            <td>Transfer Claim</td>
+                                                            <td>Tanggal Verifikasi</td>
+                                                            <td>Status Verifikasi</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-center">
+                                                    {% for obj in data %}
+                                                        <tr class="text-center">
+                                                            <td>{{obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_code}}</td>
+                                                            <td>
+                                                                {% if obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_type == 'TypeTrans.CR' %}
+                                                                    Credit
+                                                                {% elif obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_type == 'TypeTrans.DB' %}
+                                                                    <a style="color: red">
+                                                                        Debit
+                                                                    </a>
+                                                                {% endif %}
+                                                            </td>
+                                                            <td>{{obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_created_date}}</td>
+                                                            <td>{{obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_bank_account.account_bank_user_related_to_bank.bank_name}}</td>
+                                                            <td>{{obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_bank_account.account_bank_user_number}}</td>
+                                                            <td>
+                                                                {% if obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_type == 'TypeTrans.CR' %}
+                                                                    Rp. {{obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_gt_amount|floatformat:'2'|intcomma}}
+                                                                {% else %}
+                                                                    <a style="color: red">
+                                                                        (Rp. {{obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_gt_amount|floatformat:'2'|intcomma}})
+                                                                    </a>
+                                                                {% endif %}
+                                                            </td>
+                                                            <td>
+                                                                {% if obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_type == 'TypeTrans.CR' %}
+                                                                    {% if obj.deposit_verified_trans_claim_status %}
+                                                                        {{obj.deposit_verified_trans_claim_created_date}}
+                                                                    {% else %}
+                                                                         <a style="color:red">Belum Transfer</a>
+                                                                    {% endif%}
+                                                                {% else %}
+                                                                    -
+                                                                {% endif %}
+                                                            </td>
+                                                            <td>
+                                                                {% if obj.deposit_verified_trans_status %}
+                                                                    <a style="color: #67b168">{{obj.deposit_verified_trans_created_date_admin}}</a>
+                                                                {% else %}
+                                                                     <a style="color:red">Belum Diverifikasi</a>
+                                                                {% endif%}
+                                                            </td>
+                                                            <td>
+                                                                {% if obj.deposit_verified_trans_status %}
+                                                                    <a style="color: #67b168">Terverifikasi</a>
+                                                                {% else %}
+                                                                    <a href="{% url 'deposit:incoming-deposit-approval' obj.deposit_verified_trans_image_proof_trans_relation.deposit_member_trans_id %}"
+                                                                       class="btn-xs btn-info">Verifikasi</a>
+                                                                {% endif%}
+                                                            </td>
+                                                        </tr>
+                                                    {% empty %}
+                                                        <tr>
+                                                            <td colspan="9">Tidak Ada Data</td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </form>
+                                        <div class="text-center">
+                                              <ul class="pagination">
+                                                {% if data.has_previous %}
+                                                  <li><a href="?page={{ data.previous_page_number }}">&laquo;</a></li>
+                                                {% else %}
+                                                  <li class="disabled"><span>&laquo;</span></li>
+                                                {% endif %}
+                                                {% for i in data.paginator.page_range %}
+                                                  {% if data.number == i %}
+                                                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                                  {% else %}
+                                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                                  {% endif %}
+                                                {% endfor %}
+                                                {% if data.has_next %}
+                                                  <li><a href="?page={{ data.next_page_number }}">&raquo;</a></li>
+                                                {% else %}
+                                                  <li class="disabled"><span>&raquo;</span></li>
+                                                {% endif %}
+                                              </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

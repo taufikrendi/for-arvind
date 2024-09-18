@@ -1,0 +1,150 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+<div class="culmn">
+    {% include 'registration/front/header.html' %}
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="main_features fix roomy-50">
+                </div>
+            </div><!-- End off row -->
+        </div><!-- End off container -->
+    </section><!-- End off Featured Section-->
+    {% if not user.is_authenticated %}
+    <section id="business" class="business bg-grey roomy-70">
+        <div class="container">
+            <div class="row">
+                <div class="main_business">
+                    <div class="col-md-6">
+                        <div class="business_slid">
+                            <div class="business_items text-center">
+                                <div class="business_item">
+                                    <div class="business_img">
+                                        <img src="{% static 'assets/images/about-img1.jpg' %}" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="business_item sm-m-top-50">
+                            {% if form.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{form.errors}}</strong>
+                            </div>
+                            {% endif %}
+                            {% if messages %}
+                                <div class="alert alert-danger">
+                                    {% for message in messages %}
+                                        <strong>{{ message }}</strong>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <h2 class="text-uppercase">Daftar Menjadi Calon Anggota</h2>
+                            <form method="post" id="login-form">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    {{ form.email.label_tag }}
+                                    {{ form.email }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.nama.label_tag }}
+                                    <small id="nama" class="form-text text-muted">
+                                        {{ form.nama.help_text}}
+                                    </small>
+                                    {{ form.nama }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.telepon.label_tag }}
+                                    <small id="telepon" class="form-text text-muted">
+                                        {{ form.telepon.help_text}}
+                                    </small>
+                                    {{ form.telepon }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.password.label_tag }}
+                                    {{ form.password }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.konfirmasi.label_tag }}
+                                    {{ form.konfirmasi }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.tipe.label_tag }}
+                                    <h6>{{ form.tipe }}</h6>
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.persetujuan }}
+                                    <small id="persetujuan" class="form-text text-muted">
+                                        Saya Telah Membaca membaca dan menyetujui
+                                        <a href="#" style="color:red">Aturan Penggunaan</a>
+                                        dan <a href="#" style="color:red">Kebijakan Privasi</a> True <Sharia></Sharia>
+                                    </small>
+                                </div>
+                                <div class="business_btn">
+                                    <a href="/" class="btn btn-default m-top-20">Batal</a>
+                                    <button class="btn btn-primary m-top-20">
+                                        Daftar
+                                    </button>
+                                </div>
+                            </form>
+                            <hr>
+                            <h4 class="text-uppercase">Sudah Punya Akun ? <a href="{% url 'account:login' %}">Login</a> /
+                                <a href="{% url 'account:reset-pass' %}">Lupa Password</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <section id="businesslog" class="business bg-grey roomy-70">
+        <div class="container">
+            <div class="row">
+                <div class="main_business">
+                    <div class="col-md-6">
+                        <div class="business_slid">
+                            <div class="business_items text-center">
+                                <div class="business_item">
+                                    <div class="business_img">
+                                        <img src="{% static 'assets/images/about-img1.jpg' %}" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="business_item sm-m-top-50 text-center">
+                            <h4 class="text-uppercase">Di isi apa yah?</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    <section id="action" class="action bg-primary roomy-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-md-12">
+                                <div class="action_item text-center">
+                                    <h2 class="text-white text-uppercase">
+                                        Investasi Sesuai Syariat hidup akan menjadi
+                                        lebih tenang dan menyenangkan
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    {% include 'registration/front/footer.html' %}
+</div>
+{% endblock %}

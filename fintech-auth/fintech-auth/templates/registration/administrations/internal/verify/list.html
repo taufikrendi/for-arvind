@@ -1,0 +1,229 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                {% if messages %}
+                                    <div class="alert alert-success">
+                                        {% for message in messages %}
+                                            <strong>{{ message }}</strong>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-lg-12">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Daftar Keseluruhan Konsumen Belum Ter-verifikasi
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body" >
+                                        <div class="text-right">
+                                            <form method="post">
+                                                {% csrf_token %}
+                                                 <div class="text-center">
+                                                     <label>Verified Profile?</label>
+                                                     <select id="profile" name="profile">
+                                                         <option selected="selected" disabled>--Select--</option>
+                                                         <option value="True">Yes</option>
+                                                         <option value="False">No</option>
+                                                     </select>
+                                                     &nbsp;
+                                                     <label>Verified Company?</label>
+                                                     <select id="company" name="company">
+                                                         <option selected="selected" disabled>--Select--</option>
+                                                         <option value="True">Yes</option>
+                                                         <option value="False">No</option>
+                                                     </select>
+                                                     &nbsp;
+                                                     <label>Has Bank Account?</label>
+                                                     <select id="bank" name="bank">
+                                                         <option selected="selected" disabled>--Select--</option>
+                                                         <option value="True">Yes</option>
+                                                         <option value="False">No</option>
+                                                     </select>
+                                                     &nbsp;
+                                                     <label>Has Company?</label>
+                                                     <select id="has_company" name="has_company">
+                                                         <option selected="selected" disabled>--Select--</option>
+                                                         <option value="TypeAcc.CO">Yes</option>
+                                                         <option value="TypeAcc.PR">No</option>
+                                                     </select>
+                                                     <br>
+                                                     <label>Verified Doc?</label>
+                                                     <select id="digital_sign" name="digital_sign">
+                                                         <option selected="selected" disabled>--Select--</option>
+                                                         <option value="True">Yes</option>
+                                                         <option value="False">No</option>
+                                                     </select>
+                                                     &nbsp;
+                                                     <label>Verified Phone?</label>
+                                                     <select id="phone" name="phone">
+                                                         <option selected="selected" disabled>--Select--</option>
+                                                         <option value="True">Yes</option>
+                                                         <option value="False">No</option>
+                                                     </select>
+                                                     &nbsp;
+                                                     <label>Cari</label>
+                                                     <input type="text" id="search" name="search" placeholder="e-mail">
+                                                     &nbsp;
+                                                     <button class="btn-info">Filter</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        </br>
+                                        <form>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr class="text-center">
+                                                            <td>Email</td>
+                                                            <td>Fullname</td>
+                                                            <td>Revision Profile</td>
+                                                            <td>Akun Bank</td>
+                                                            <td>Digital Sign</td>
+                                                            <td>Verify Phone</td>
+                                                            <td>E-KYC</td>
+                                                            <td>Follow Up</td>
+                                                            <td>CIF Number</td>
+                                                            <td>Setoran Pokok</td>
+                                                            <td>Setoran Wajib</td>
+                                                            <td>Tgl Verifikasi</td>
+                                                            <td>Tgl Revisi</td>
+                                                            <td>Verify</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-center">
+                                                    {% for obj in data_list %}
+                                                        <tr class="text-center">
+                                                            <td>{{obj.email}}</td>
+                                                            <td>{{obj.first_name}}</td>
+                                                            {% if obj.verify_status_user_related.member_verify_status_revision_profile == 0 %}
+                                                            <td style="color: limegreen">
+                                                                {{obj.verify_status_user_related.member_verify_status_revision_profile|default:"Tidak Pernah"}}
+                                                            </td>
+                                                            {% else %}
+                                                            <td style="color: orangered">
+                                                                {{obj.verify_status_user_related.member_verify_status_revision_profile}}x
+                                                            </td>
+                                                            {% endif %}
+                                                            {% if not obj.verify_status_user_related.member_verify_status_bank %}
+                                                            <td style="color: orangered">
+                                                                Belum di isi!
+                                                            </td>
+                                                            {% else %}
+                                                            <td style="color: limegreen">
+                                                                Sudah Terverifikasi
+                                                            </td>
+                                                            {% endif %}
+                                                            <td>Belum Aktif</td>
+                                                            <td>Belum Aktif</td>
+                                                            <td>Belum Aktif</td>
+                                                            <td>
+                                                                <a href="https://api.whatsapp.com/send?phone={{obj.accountprofile.account_profile_phone_number}}"
+                                                                    style="color: darkslateblue" target="_blank">
+                                                                    Follow Up
+                                                                </a>
+                                                            </td>
+                                                            {% if obj.accountprofile.account_profile_cif_number %}
+                                                            <td>{{ obj.accountprofile.account_profile_cif_number }}</td>
+                                                            {% else %}
+                                                            <td>Calon Anggota</td>
+                                                            {% endif %}
+                                                            <td>Setoran Pokok</td>
+                                                            <td>Setoran Wajib</td>
+                                                            <td>{{ obj.verify_status_user_related.member_verify_status_revision_profile_last_date|default:"Belum Diverifikasi" }}</td>
+                                                            <td>{{ obj.accountprofile.account_profile_updated_at}}</td>
+                                                            {% if obj.verify_status_user_related.member_verify_status_revision_profile_check %}
+                                                            <td style="color: limegreen">
+                                                                Verified
+                                                            </td>
+                                                            {% else %}
+                                                            <td>
+                                                                <a href="{% url 'membership:membership-approval' pk=obj.accountprofile.account_profile_id %}" class="btn-xs btn-info">
+                                                                    Verify
+                                                                </a>
+                                                            </td>
+                                                            {% endif %}
+                                                        </tr>
+                                                    {% empty %}
+                                                        <tr>
+                                                            <td colspan="14">
+                                                                Tidak Ada Data
+                                                            </td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </form>
+                                        <div class="text-center">
+                                              <ul class="pagination">
+                                                {% if data_list.has_previous %}
+                                                  <li><a href="?page={{ data_list.previous_page_number }}">&laquo;</a></li>
+                                                {% else %}
+                                                  <li class="disabled"><span>&laquo;</span></li>
+                                                {% endif %}
+                                                {% for i in data_list.paginator.page_range %}
+                                                  {% if data_list.number == i %}
+                                                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                                  {% else %}
+                                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                                  {% endif %}
+                                                {% endfor %}
+                                                {% if data_list.has_next %}
+                                                  <li><a href="?page={{ data_list.next_page_number }}">&raquo;</a></li>
+                                                {% else %}
+                                                  <li class="disabled"><span>&raquo;</span></li>
+                                                {% endif %}
+                                              </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

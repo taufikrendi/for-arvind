@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/fintech.iml" filepath="$PROJECT_DIR$/.idea/fintech.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-funds/.idea/fintech-funds.iml" filepath="$PROJECT_DIR$/../fintech-funds/.idea/fintech-funds.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-internal-admin/.idea/fintech-internal-admin.iml" filepath="$PROJECT_DIR$/../fintech-internal-admin/.idea/fintech-internal-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-liveness/.idea/fintech-liveness.iml" filepath="$PROJECT_DIR$/../fintech-liveness/.idea/fintech-liveness.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-scheduler/.idea/fintech-scheduler.iml" filepath="$PROJECT_DIR$/../fintech-scheduler/.idea/fintech-scheduler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-transactional/.idea/fintech-transactional.iml" filepath="$PROJECT_DIR$/../fintech-transactional/.idea/fintech-transactional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../pgsql_docker/kafka/.idea/kafka.iml" filepath="$PROJECT_DIR$/../../pgsql_docker/kafka/.idea/kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Apps/py/old_fintech/.idea/old_fintech.iml" filepath="$PROJECT_DIR$/../../Apps/py/old_fintech/.idea/old_fintech.iml" />
+    </modules>
+  </component>
+</project>

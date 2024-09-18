@@ -1,0 +1,501 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        {% if messages %}
+            <div class="alert alert-danger">
+                {% for message in messages %}
+                    <strong>{{ message }}</strong>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+
+            <!--Home Sections-->
+            <section id="home" class="home bg-black fix">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="main_home text-center">
+                            <div class="col-md-12">
+                                <div class="hello_slid">
+                                    <div class="slid_item">
+                                        <div class="home_text ">
+                                            <h2 class="text-white">Bersama <strong>True Sharia</strong></h2>
+                                            <h1 class="text-white">Investasi Sesuai dengan Syariat</h1>
+                                            <h3 class="text-white">- <strong>100%</strong> No Riba, No Gharar, No Mukhatharah -</h3>
+                                        </div>
+
+                                        <div class="home_btns m-top-40">
+                                            <a href="#" class="btn btn-primary m-top-20">Mulai Danai</a>
+                                            <a href="#" class="btn btn-default m-top-20">Dapatkan Pembiayaan</a>
+                                        </div>
+                                    </div><!-- End off slid item -->
+                                    <div class="slid_item">
+                                        <div class="home_text ">
+                                            <h2 class="text-white">Bersama <strong>True Sharia</strong></h2>
+                                            <h1 class="text-white">Anda Mendapatkan Imbal Hasil Menarik Sampai dengan 25%</h1>
+                                            <h3 class="text-white">- <strong>100%</strong> No Riba, No Gharar, No Mukhatharah -</h3>
+                                        </div>
+
+                                        <div class="home_btns m-top-40">
+                                            <a href="" class="btn btn-primary m-top-20">Mulai Danai</a>
+                                            <a href="" class="btn btn-default m-top-20">Dapatkan Pembiayaan</a>
+                                        </div>
+                                    </div><!-- End off slid item -->
+                                    <div class="slid_item">
+                                        <div class="home_text ">
+                                            <h2 class="text-white">Bersama <strong>True Sharia</strong></h2>
+                                            <h1 class="text-white">Kita Membantu UMKM Berkembang dan Lebih Maju dari sumber yang Halal</h1>
+                                            <h3 class="text-white">- <strong>100%</strong> No Riba, No Gharar, No Mukhatharah -</h3>
+                                        </div>
+
+                                        <div class="home_btns m-top-40">
+                                            <a href="" class="btn btn-primary m-top-20">Mulai Danai</a>
+                                            <a href="" class="btn btn-default m-top-20">Dapatkan Pembiayaan</a>
+                                        </div>
+                                    </div><!-- End off slid item -->
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div><!--End off row-->
+                </div><!--End off container -->
+            </section> <!--End off Home Sections-->
+
+            <!--Featured Section-->
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-70">
+                            <div class="col-md-4">
+                                <div class="features_item sm-m-top-30">
+                                    <div class="f_item_icon">
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                    </div>
+                                    <div class="f_item_text">
+                                        <h3>100% No Riba</h3>
+                                        <p>Murni Investasi, <b>Bukan Akad Qardh</b>, Tidak Ada Pertambahan Nilai Pada Hutang</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="features_item sm-m-top-30">
+                                    <div class="f_item_icon">
+                                        <i class="fa fa-tablet"></i>
+                                    </div>
+                                    <div class="f_item_text">
+                                        <h3>100% No Gharar</h3>
+                                        <p>Tidak Batil, Tidak Merugikan, Akad Jelas, <b>Bukan Perjudian</b> </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="features_item sm-m-top-30">
+                                    <div class="f_item_icon">
+                                        <i class="fa fa-sliders"></i>
+                                    </div>
+                                    <div class="f_item_text">
+                                        <h3>100% No Mukhatharah</h3>
+                                        <p>Keuntungan Jelas, Produknya Jelas, Perhitungan Jelas, <b>No Hidden Cost</b> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section><!-- End off Featured Section-->
+
+            <!--Business Section-->
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-6">
+                                <div class="business_slid">
+                                    <div class="slid_shap bg-grey"></div>
+                                    <div class="business_items text-center">
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{% static 'assets/images/about-img1.jpg' %}" alt="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{% static 'assets/images/about-img1.jpg' %}" alt="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="{% static 'assets/images/about-img1.jpg' %}" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="business_item sm-m-top-50">
+                                    <h2 class="text-uppercase"><strong>True Shariah</strong> Sesuai Syariat</h2>
+<!--                                    <ul>-->
+<!--                                        <li><i class="fa fa-arrow-circle-right"></i> Clean & Modern Design</li>-->
+<!--                                        <li><i class="fa  fa-arrow-circle-right"></i> Fully Responsive</li>-->
+<!--                                        <li><i class="fa  fa-arrow-circle-right"></i> Google Fonts</li>-->
+<!--                                    </ul>-->
+                                    <p class="m-top-20">
+                                        Jadilah pelopor halal-nya harta investasi dari sebuah bisnis yang sesuai syariat.
+                                        Membantu usaha UMKM dengan harta yang halal dan menyelamatkan banyak golongan masyarakat
+                                        dari Haramnya Harta <b>Riba</b>. Insya Alloh, Alloh subhanahu wa ta'ala menyelamatkan kita
+                                        dari dosa riba. Bersama kita bebas dari riba
+                                    </p>
+
+                                    <div class="business_btn">
+                                        <a href="" class="btn btn-default m-top-20">Raih Pembiayaan</a>
+                                        <a href="" class="btn btn-primary m-top-20">Danai Sekarang</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End off Business section -->
+
+            <!--Featured Section-->
+            <section id="features-second" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                            <div class="col-md-3">
+                                <div class="brand_item sm-m-top-30">
+                                    <div class="logo">
+                                        <img src="{% static 'assets/images/logo-ojk.png' %}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="brand_item sm-m-top-30">
+                                    <div class="logo">
+                                        <img src="{% static 'assets/images/logo-mui.png' %}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="brand_item sm-m-top-30">
+                                    <div class="logo">
+                                        <img src="{% static 'assets/images/logo-afpi.png' %}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="brand_item sm-m-top-30">
+                                    <div class="logo">
+                                        <img src="{% static 'assets/images/logo-fintech-syariah.png' %}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section><!-- End off Featured Section-->
+
+            <!--product section-->
+            <section id="product" class="test bg-grey roomy-60 fix">
+                <div class="container">
+                    <div class="main_product roomy-80">
+                        <div class="head_title text-center fix">
+                            <h2 class="text-uppercase">Danai Proyek yang Terseleksi</h2>
+                            <h5>Kerja sama proyek dengan risiko paling minimal</h5>
+                        </div>
+
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img1.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img1.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img2.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img2.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img3.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img3.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img4.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img4.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img1.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img1.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img2.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img2.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img3.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img3.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img4.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img4.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img1.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img1.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img2.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img2.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img3.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img3.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="port_item xs-m-top-30">
+                                                    <div class="port_img">
+                                                        <img src="{% static 'assets/images/work-img4.jpg' %}" alt="" />
+                                                        <div class="port_overlay text-center">
+                                                            <a href="{% static 'assets/images/work-img4.jpg' %}" class="popup-img">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="port_caption m-top-20">
+                                                        <h5>Your Work Title</h5>
+                                                        <h6>- Graphic Design</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section><!-- End off Product section -->
+
+            <!--Brand Section-->
+            <section id="brand" class="brand fix roomy-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_brand text-center">
+                            <div class="col-md-2 col-md-4 col-xm-6">
+                                <div class="brand_item sm-m-top-20">
+                                    <img src="{% static 'assets/images/logo-dpsi.png' %}" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-md-4 col-xs-6">
+                                <div class="brand_item col-xm-6">
+                                    <img src="{% static 'assets/images/logo-bni-syariah.png' %}" alt="" />
+                                </div>
+                            </div>
+<!--                            <div class="col-md-2 col-sm-4 col-xs-6">-->
+<!--                                <div class="brand_item sm-m-top-20">-->
+<!--                                    <img src="{% static 'assets/images/cbrand-img3.png' %}" alt="" />-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-2 col-sm-4 col-xs-6">-->
+<!--                                <div class="brand_item sm-m-top-20">-->
+<!--                                    <img src="{% static 'assets/images/cbrand-img4.png' %}" alt="" />-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-2 col-sm-4 col-xs-6">-->
+<!--                                <div class="brand_item sm-m-top-20">-->
+<!--                                    <img src="{% static 'assets/images/cbrand-img5.png' %}" alt="" />-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-2 col-sm-4 col-xs-6">-->
+<!--                                <div class="brand_item sm-m-top-20">-->
+<!--                                    <img src="{% static 'assets/images/cbrand-img6.png' %}" alt="" />-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End off Brand section -->
+
+
+            <!--Call to  action section-->
+            <section id="action" class="action bg-primary roomy-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-md-8">
+                                <div class="action_item text-left">
+                                    <h2 class="text-white text-uppercase">
+                                        Investasi Sesuai Syariat hidup akan menjadi
+                                        lebih tenang dan menyenangkan
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="action_btn text-left sm-text-center">
+                                    <a href="" class="btn btn-default">Bergabung Bersama Kami</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% include 'registration/front/footer.html' %}
+        </div>
+
+{% endblock %}

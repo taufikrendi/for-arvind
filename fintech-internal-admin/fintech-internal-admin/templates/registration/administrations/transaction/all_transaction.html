@@ -1,0 +1,153 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+<div class="culmn">
+    <!--Home page style-->
+
+    {% include 'registration/front/header.html' %}
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="main_features fix roomy-50">
+                </div>
+            </div><!-- End off row -->
+        </div><!-- End off container -->
+    </section>
+
+    <section id="business" class="business bg-grey roomy-70">
+        <div class="container">
+            <div class="row">
+                <div class="main_business">
+                    <div class="col-md-12">
+                        {% if messages %}
+                            <div class="alert alert-success">
+                                {% for message in messages %}
+                                    <strong>{{ message }}</strong>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="main_business">
+                    <div class="col-md-12">
+                        <div class="panel panel-info" >
+                            <div class="panel-heading">
+                                <div class="panel-title text-center">
+                                    Seluruh Transaksi
+                                </div>
+                            </div>
+
+                            <div class="panel-body" >
+                                <div>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <div class="text-center">
+                                            <label>Cari Data</label>
+                                            <input type="text" id="search" name="search" placeholder="e-mail">
+                                             &nbsp;
+                                            <button class="btn-info">Filter</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <br>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr class="text-center">
+                                                    <td>Email</td>
+                                                    <td>Jumlah</td>
+                                                    <td>Tipe Transaksi</td>
+                                                    <td>Tipe Pembayaran</td>
+                                                    <td>Verifikasi</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                            {% for obj in data_list %}
+                                                <tr>
+                                                    <td>{{obj.transaction_deposit_verified_user_related}}</td>
+                                                    <td style="color: #2b542c">
+                                                        {% if obj.transaction_deposit_transit_gt_amount %}
+                                                            Rp. {{obj.transaction_deposit_transit_gt_amount|floatformat:2|intcomma}}
+                                                        {% else %}
+                                                            Rp. {{obj.transaction_deposit_time_transit_amount|floatformat:2|intcomma}}
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>
+                                                        {% if obj.transaction_deposit_transit_type %}
+                                                            {{obj.transaction_deposit_transit_type}}
+                                                        {% else %}
+                                                            {{obj.transaction_deposit_time_transit_type}}
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>
+                                                        {{obj.transaction_deposit_verified_status}}
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'transaction:approval-transaction' obj.transaction_deposit_verified_transit_code %}">Cek</a>
+                                                    </td>
+                                                </tr>
+                                            {% empty %}
+                                                <tr>
+                                                    <td colspan="14">
+                                                        Tidak Ada Data
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                                <div class="text-center">
+                                      <ul class="pagination">
+                                        {% if data_list.has_previous %}
+                                          <li><a href="?page={{ data_list.previous_page_number }}">&laquo;</a></li>
+                                        {% else %}
+                                          <li class="disabled"><span>&laquo;</span></li>
+                                        {% endif %}
+                                        {% for i in data_list.paginator.page_range %}
+                                          {% if data_list.number == i %}
+                                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                          {% else %}
+                                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                          {% endif %}
+                                        {% endfor %}
+                                        {% if data_list.has_next %}
+                                          <li><a href="?page={{ data_list.next_page_number }}">&raquo;</a></li>
+                                        {% else %}
+                                          <li class="disabled"><span>&raquo;</span></li>
+                                        {% endif %}
+                                      </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="action" class="action bg-primary roomy-10">
+        <div class="container">
+            <div class="row">
+                <div class="maine_action">
+                    <div class="col-sm-12">
+                        <div class="action_item text-center">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'registration/front/footer.html' %}
+</div>
+{% endblock %}

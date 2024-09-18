@@ -1,0 +1,274 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                {% if messages %}
+                                    <div class="alert alert-success">
+                                        {% for message in messages %}
+                                            <strong>{{ message }}</strong>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for group in user.groups.all %}
+                    {% if group.name != "Member"%}
+                        <div class="container">
+                            <div class="row">
+                                <div class="main_business">
+                                    <div class="col-md-7">
+                                        <div class="panel panel-info" >
+                                            <div class="panel-heading">
+                                                <div class="panel-title text-center">
+                                                    Data Pribadi
+                                                </div>
+                                            </div>
+
+                                            <div class="panel-body" >
+                                                <form>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                                                        <div class="col-sm-10">
+                                                            <a>{{user.username}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="password" class="col-sm-2 col-form-label">Password</label>
+                                                        <div class="col-sm-10">
+                                                          <a href="{% url 'account:change-password' %}">
+                                                              Ganti Password
+                                                          </a>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <hr>
+                                                <form>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">Nama Lengkap</label>
+                                                        <div class="col-sm-8">
+                                                            <a>{{user.first_name}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">No. Handphone</label>
+                                                        <div class="col-sm-4">
+                                                            <a>{{user.accountprofile.account_profile_phone_number}}</a>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="container">
+                            <div class="row">
+                                <div class="main_business">
+                                    <div class="col-md-7">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-info" >
+                                            <div class="panel-heading">
+                                                <div class="panel-title text-center">
+                                                    Data Pribadi
+                                                </div>
+                                            </div>
+
+                                            <div class="panel-body" >
+                                                <form>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-2 col-form-label">Profile Completed</label>
+                                                        {% if user.verify_status_user_related.member_verify_status_profile_close_to_update is False %}
+                                                        <a href="{% url 'account:update-account' %}" class="btn-sm btn-info">Lengkapi</a>
+                                                        {% endif %}
+                                                        <div class="col-sm-8">
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar"
+                                                                     style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                                                     aria-valuemax="100">25%
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                                                        <div class="col-sm-10">
+                                                            <a>{{user.username}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="password" class="col-sm-2 col-form-label">Password</label>
+                                                        <div class="col-sm-10">
+                                                          <a href="{% url 'account:change-password' %}">
+                                                              Ganti Password
+                                                          </a>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <hr>
+                                                <form>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">No. Rekening</label>
+                                                        <div class="col-sm-8">
+                                                            {% if not user.accountprofile.account_profile_cooperative_number %}
+                                                            <a>Belum Melengkapi Profile</a>
+                                                            {% else %}
+                                                            <a onclick="navigator.clipboard.writeText('{{user.accountprofile.account_profile_cooperative_number}}')
+                                                                .then(function(){
+                                                                document.getElementById('insert1').innerHTML = 'Copied!';
+                                                                })">
+                                                                {{user.accountprofile.account_profile_cooperative_number}}
+                                                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                            </a>
+                                                            <span id="insert1">
+                                                            </span>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">Nama Lengkap</label>
+                                                        <div class="col-sm-8">
+                                                            <a>{{user.first_name}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">No. Handphone</label>
+                                                        <div class="col-sm-4">
+                                                            <a>{{user.accountprofile.account_profile_phone_number}}</a>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <a href="#" class="btn-sm btn-info">Verifikasi</a>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">KTP</label>
+                                                        <div class="col-sm-8">
+                                                            <a>open</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">Selfie</label>
+                                                        <div class="col-sm-8">
+                                                            <a>open</a>
+                                                        </div>
+                                                    </div>
+                                                    <h10>Untuk Memperbaharui Data silahkan Kontak Customer Service</h10>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="panel panel-info" >
+                                            <div class="panel-heading">
+                                                <div class="panel-title text-center">Dokumen Saya</div>
+                                            </div>
+
+                                            <div class="panel-body" >
+                                                <div class="mb-3 form-group row text-center">
+                                                    <a href="#"
+                                                       class="btn btn-group-lg btn-info">
+                                                        Sign Documents
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="panel panel-info" >
+                                            <div class="panel-heading">
+                                                <div class="panel-title text-center">Informasi Perbankan</div>
+                                            </div>
+
+                                            <div class="panel-body" >
+                                                {% if not user.bank_account_user_related.account_bank_user_name %}
+                                                    <div class="mb-3 form-group row text-center">
+                                                        <a href="{% url 'account:update-account-bank'%}"
+                                                           class="btn btn-group-lg btn-info">
+                                                            Lengkapi Akun Bank
+                                                        </a>
+                                                    </div>
+                                                {% else %}
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">Nama Pemilik Rekening</label>
+                                                        <div class="col-sm-8">
+                                                            <a>{{user.bank_account_user_related.account_bank_user_name}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">No Rekening</label>
+                                                        <div class="col-sm-8">
+                                                            <a>{{user.bank_account_user_related.account_bank_user_number}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 form-group row">
+                                                        <label for="email" class="col-sm-4 col-form-label">Nama Bank</label>
+                                                        <div class="col-sm-8">
+                                                            <a>{{user.bank_account_user_related.account_bank_user_related_to_bank.bank_name}}</a>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-info" >
+                                            <div class="panel-heading">
+                                                <div class="panel-title text-center">
+                                                    Bantuan
+                                                </div>
+                                            </div>
+
+                                            <div class="panel-body" >
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

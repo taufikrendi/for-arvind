@@ -1,0 +1,140 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+<div class="culmn">
+    <!--Home page style-->
+
+    {% include 'registration/front/header.html' %}
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="main_features fix roomy-50">
+                </div>
+            </div><!-- End off row -->
+        </div><!-- End off container -->
+    </section>
+
+    <section id="business" class="business bg-grey roomy-70" style="font-size: 20px">
+        <div class="container">
+            <div class="row">
+                <div class="main_business">
+                    <div class="col-md-12">
+                        {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{form.errors}}</strong>
+                        </div>
+                        <br>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="container">
+                <div class="row">
+                    <div class="main_business">
+                        <div class="col-md-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <div class="panel-title text-center">
+                                        Appraisal Result
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            No. Dokumen
+                                        </label>
+                                        <div>
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Nama Lembaga / Rekanan
+                                        </label>
+                                        <div>
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            PIC Lembaga / Rekanan
+                                        </label>
+                                        <div>
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Tanggal Appraisal
+                                        </label>
+                                        <div>
+                                            <input type="date">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Perkiraan Harga Jual
+                                        </label>
+                                        <div>
+                                            <input type="number">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Informasi Lainnya
+                                        </label>
+                                        <div>
+                                            <textarea class="form-control" cols="60" rows="6"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="main_business">
+                        <div class="col-md-12">
+                            <div class="mb-12 form-group row">
+                                <a href="{% url 'loan:all-loan'%}" class="btn btn-warning">Kembali</a>
+                                <button class="btn btn-info" id="save" name="save">Simpan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="action" class="action bg-primary roomy-10">
+        <div class="container">
+            <div class="row">
+                <div class="maine_action">
+                    <div class="col-sm-12">
+                        <div class="action_item text-center">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'registration/front/footer.html' %}
+</div>
+{% endblock %}

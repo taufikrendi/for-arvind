@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: uvicorn asgi:app --debug --reload --port 55000 --host 0.0.0.0
+    volumes:
+      - ./fintech-liveness/:/usr/src/fintech-liveness/
+    ports:
+      - 55000:55000
+
+networks:
+  default:
+    name: sample-network

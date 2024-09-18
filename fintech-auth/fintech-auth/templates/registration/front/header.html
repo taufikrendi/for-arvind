@@ -1,0 +1,100 @@
+{% load static %}
+{% load humanize %}
+{% block content %}
+<nav class="navbar navbar-default bootsnav navbar-fixed">
+    <div class="navbar-top bg-grey fix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="navbar-callus text-left sm-text-center">
+                        <ul class="list-inline">
+                            <li><a href=""><i class="fa fa-phone"></i> WA Fast Response: 1234 5678 90</a></li>
+                            <li><a href=""><i class="fa fa-envelope-o"></i> Contact us: sales@truesharia.id</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="navbar-socail text-right sm-text-center">
+                        <ul class="list-inline">
+                            <li><a href="">TKB90: 100%</a></li>
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+
+    <div class="container">
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-bars"></i>
+            </button>
+            {% if not user.is_authenticated %}
+                <a class="navbar-brand" href="/">
+<!--                    <img src="{% static 'assets/images/logo-true.png' %}" class="logo" alt="">-->
+                    <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+                </a>
+            {% else %}
+                <a class="navbar-brand" href="#">
+<!--                    <img src="{% static 'assets/images/logo-true.png' %}" class="logo" alt="">-->
+                    <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
+                </a>
+            {% endif %}
+
+        </div>
+        <!-- End Header Navigation -->
+
+        <!-- navbar menu -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                     <li><a href="#">Dasboard</a></li>
+                    {% for group in user.groups.all %}
+                        {% if group.name == "Collection" %}
+                            <li><a href="#">Near TKB90</a></li>
+                            <li><a href="#">Near ..</a></li>
+                        {% elif group.name == "Credit Analyst" %}
+                            <li><a href="#">Verify</a></li>
+                            <li><a href="#">Member Deposit</a></li>
+                        {% elif group.name == "Member" %}
+                            <li><a href="#">Keuangan</a></li>
+                            <li><a href="#">Rekapitulasi</a></li>
+                        {% elif group.name == "Dashboard" %}
+                            <li><a href="#">wow</a></li>
+                        {% elif group.name == "Sales" %}
+                            <li><a href="#">Campaign</a></li>
+                            <li><a href="#">Membership</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    <li><a href="#">Personal</a></li>
+                    <li><a href="#">Logout</a></li>
+                {% else %}
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="#">Gabung</a></li>
+                    <li><a href="#">Tingkat Pendapatan</a></li>
+                    <li><a href="#work">Cara Kerja</a></li>
+                    <li><a href="#test">Dampak Sosial</a></li>
+                    <li><a href="#contact">Hubungi Kami</a></li>
+                {% endif %}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+{% endblock %}

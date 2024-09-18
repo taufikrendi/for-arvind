@@ -1,0 +1,446 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+<div class="culmn">
+    <!--Home page style-->
+
+    {% include 'registration/front/header.html' %}
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="main_features fix roomy-50">
+                </div>
+            </div><!-- End off row -->
+        </div><!-- End off container -->
+    </section>
+
+    <section id="business" class="business bg-grey roomy-70" style="font-size: 20px">
+        <div class="container">
+            <div class="row">
+                <div class="main_business">
+                    <div class="col-md-12">
+                        {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{form.errors}}</strong>
+                        </div>
+                        <br>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="container">
+                <div class="row">
+                    <div class="main_business">
+                        <div class="col-md-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <div class="panel-title text-center">
+                                        Verifikasi Pekerjaan / Usaha
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            No. Dokumen
+                                        </label>
+                                        <div>
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Nama Perusahaan / Usaha
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:CompanyNameCheck();" id="comYes"
+                                                   name="com">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:CompanyNameCheck();" id="comNo"
+                                                   name="com">
+                                        </div>
+                                        <br>
+                                        <div id="ifComNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Nama Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <input type='text' id='TrueComName' name='TrueComName'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Alamat Perusahaan / Usaha
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:CompanyAddCheck();" id="addYes"
+                                                   name="add">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:CompanyAddCheck();" id="addNo"
+                                                   name="add">
+                                        </div>
+                                        <br>
+                                        <div id="ifAddNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Alamat Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <textarea class="form-control" id='TrueAddName' name='TrueAddName'
+                                                          cols="60" rows="6"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Jabatan
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:EmployeePositionCheck();"
+                                                   id="posYes" name="pos">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:EmployeePositionCheck();" id="posNo"
+                                                   name="pos">
+                                        </div>
+                                        <br>
+                                        <div id="ifPosNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Jabatan Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <input type='text' id='TruePosName' name='TruePosName'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Penghasilan
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:IncomeCheck();" id="incYes"
+                                                   name="inc">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:IncomeCheck();" id="incNo"
+                                                   name="inc">
+                                        </div>
+                                        <br>
+                                        <div id="ifIncNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Penghasilan Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <input type='number' id='TrueIncName' name='TrueIncName'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Lama Bekerja
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:WorkingYearsCheck();" id="wysYes"
+                                                   name="wys">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:WorkingYearsCheck();" id="wysNo"
+                                                   name="wys">
+                                        </div>
+                                        <br>
+                                        <div id="ifWysNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Lama Bekerja Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <input type='date' id='dateWys' name='dateWys'>
+                                                -
+                                                <input type='date' id='untilDateWys' name='untilDateWys'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Status
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:StatusCheck();" id="sstYes"
+                                                   name="sst">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:StatusCheck();" id="sstNo"
+                                                   name="sst">
+                                        </div>
+                                        <br>
+                                        <div id="ifSstNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Status Bekerja Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <label>Tetap</label>
+                                                <input type="radio" onclick="javascript:StatusCheck();"
+                                                       name="TruesstYes">
+                                                <label>Kontrak</label>
+                                                <input type="radio" onclick="javascript:StatusCheck();"
+                                                       name="TruesstYes">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Catatan Verifikasi
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <textarea class="form-control" cols="60" rows="6"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="main_business">
+                        <div class="col-md-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <div class="panel-title text-center">
+                                        Verifikasi Pekerjaan / Usaha Pasangan
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            No. Dokumen
+                                        </label>
+                                        <div>
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Nama Perusahaan / Usaha
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:CompanyNameCheck();" id="comYes"
+                                                   name="com">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:CompanyNameCheck();" id="comNo"
+                                                   name="com">
+                                        </div>
+                                        <br>
+                                        <div id="ifComNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Nama Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <input type='text' id='TrueComName' name='TrueComName'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Alamat Perusahaan / Usaha
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:CompanyAddCheck();" id="addYes"
+                                                   name="add">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:CompanyAddCheck();" id="addNo"
+                                                   name="add">
+                                        </div>
+                                        <br>
+                                        <div id="ifAddNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Alamat Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <textarea class="form-control" id='TrueAddName' name='TrueAddName'
+                                                          cols="60" rows="6"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Jabatan
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:EmployeePositionCheck();"
+                                                   id="posYes" name="pos">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:EmployeePositionCheck();" id="posNo"
+                                                   name="pos">
+                                        </div>
+                                        <br>
+                                        <div id="ifPosNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Jabatan Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <input type='text' id='TruePosName' name='TruePosName'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Penghasilan
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:IncomeCheck();" id="incYes"
+                                                   name="inc">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:IncomeCheck();" id="incNo"
+                                                   name="inc">
+                                        </div>
+                                        <br>
+                                        <div id="ifIncNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Penghasilan Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <input type='number' id='TrueIncName' name='TrueIncName'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Lama Bekerja
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:WorkingYearsCheck();" id="wysYes"
+                                                   name="wys">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:WorkingYearsCheck();" id="wysNo"
+                                                   name="wys">
+                                        </div>
+                                        <br>
+                                        <div id="ifWysNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Lama Bekerja Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <input type='date' id='dateWys' name='dateWys'>
+                                                -
+                                                <input type='date' id='untilDateWys' name='untilDateWys'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Status
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <label>Benar</label>
+                                            <input type="radio" onclick="javascript:StatusCheck();" id="sstYes"
+                                                   name="sst">
+                                            <label>Tidak Sesuai</label>
+                                            <input type="radio" onclick="javascript:StatusCheck();" id="sstNo"
+                                                   name="sst">
+                                        </div>
+                                        <br>
+                                        <div id="ifSstNo" style="display:none" class="form-inline">
+                                            <label class="col-sm-6 col-form-label">Status Bekerja Terverifikasi</label>
+                                            <div class="col-sm-6">
+                                                <label>Tetap</label>
+                                                <input type="radio" onclick="javascript:StatusCheck();"
+                                                       name="TruesstYes">
+                                                <label>Kontrak</label>
+                                                <input type="radio" onclick="javascript:StatusCheck();"
+                                                       name="TruesstYes">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-12 form-inline row">
+                                        <label for="email" class="col-sm-6 col-form-label">
+                                            Catatan Verifikasi
+                                        </label>
+                                        <div class="col-sm-6">
+                                            <textarea class="form-control" cols="60" rows="6"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="main_business">
+                        <div class="col-md-12">
+                            <div class="mb-12 form-group row">
+                                <a href="{% url 'loan:all-loan'%}" class="btn btn-warning">Kembali</a>
+                                <button class="btn btn-info" id="save" name="save">Simpan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="action" class="action bg-primary roomy-10">
+        <div class="container">
+            <div class="row">
+                <div class="maine_action">
+                    <div class="col-sm-12">
+                        <div class="action_item text-center">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function CompanyNameCheck() {
+            if (document.getElementById('comNo').checked) {
+                document.getElementById('ifComNo').style.display = 'block';
+            }
+            else document.getElementById('ifComNo').style.display = 'none';
+        }
+        function CompanyAddCheck() {
+            if (document.getElementById('addNo').checked) {
+                document.getElementById('ifAddNo').style.display = 'block';
+            }
+            else document.getElementById('ifAddNo').style.display = 'none';
+        }
+        function EmployeePositionCheck() {
+            if (document.getElementById('posNo').checked) {
+                document.getElementById('ifPosNo').style.display = 'block';
+            }
+            else document.getElementById('ifPosNo').style.display = 'none';
+        }
+        function IncomeCheck() {
+            if (document.getElementById('incNo').checked) {
+                document.getElementById('ifIncNo').style.display = 'block';
+            }
+            else document.getElementById('ifIncNo').style.display = 'none';
+        }
+        function WorkingYearsCheck() {
+            if (document.getElementById('wysNo').checked) {
+                document.getElementById('ifWysNo').style.display = 'block';
+            }
+            else document.getElementById('ifWysNo').style.display = 'none';
+        }
+        function StatusCheck() {
+            if (document.getElementById('sstNo').checked) {
+                document.getElementById('ifSstNo').style.display = 'block';
+            }
+            else document.getElementById('ifSstNo').style.display = 'none';
+        }
+
+    </script>
+
+    {% include 'registration/front/footer.html' %}
+</div>
+{% endblock %}

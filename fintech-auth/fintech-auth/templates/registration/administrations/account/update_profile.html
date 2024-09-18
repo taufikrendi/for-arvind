@@ -1,0 +1,228 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+{% include 'registration/administrations/account/provinces.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{form.errors}}</strong>
+                    </div>
+                    <br>
+                    {% endif %}
+                    <form method="post" id="create-form" enctype="multipart/form-data" name="save-profile">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-7">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Lengkapi Data Keanggotaan Anda
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body" >
+                                        <div class="col-md-10">
+                                            <div class="business_item sm-m-top-50">
+                                                <div class="mb-3">
+                                                    {{ form.NIK.label_tag }}
+                                                    {{ form.NIK }}
+                                                    <small id="profile_number" class="form-text text-muted">
+                                                        {{ form.NIK.help_text }}
+                                                    </small>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    {{ form.NPWP.label_tag }}
+                                                    {{ form.NPWP }}
+                                                    <small id="profile_number_tax" class="form-text text-muted">
+                                                        {{ form.NPWP.help_text }}
+                                                    </small>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    {{ form.Gender.label_tag }}
+                                                    {{ form.Gender }}
+                                                    <small id="profile_sex" class="form-text text-muted">
+                                                        {{ form.Gender.help_text}}
+                                                    </small>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    {{ form.DOB.label_tag }}
+                                                    {{ form.DOB }}
+                                                    <small id="profile_dob" class="form-text text-muted">
+                                                        {{ form.DOB.help_text}}
+                                                    </small>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    <label for="POB">Tempat Lahir (POB)</label>
+                                                    <select id="POB" name="POB" class="form-control" required>
+                                                    </select>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    <label for="Provinsi">Provinsi Tempat Tinggal</label>
+                                                    <select id="Provinsi" name="Provinsi" class="form-control", required>
+                                                    </select>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    <label for="Kecamatan">Kecamatan Tempat Tinggal</label>
+                                                    <select id="Kecamatan" name="Kecamatan" class="form-control", required>
+                                                    </select>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    <label for="Kelurahan">Kelurahan Tempat Tinggal</label>
+                                                    <select id="Kelurahan" name="Kelurahan" class="form-control", required>
+                                                    </select>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    {{ form.Alamat.label_tag }}
+                                                    {{ form.Alamat }}
+                                                    <small id="profile_address" class="form-text text-muted">
+                                                        {{ form.Alamat.help_text}}
+                                                    </small>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    {{ form.EKTP.label_tag }}
+                                                    {{ form.EKTP }}
+                                                    <small id="ektp_upload" class="form-text text-muted">
+                                                        {{ form.EKTP.help_text}}
+                                                    </small>
+                                                </div>
+                                                </br>
+                                                <div class="mb-3">
+                                                    {{ form.ENPWP.label_tag }}
+                                                    {{ form.ENPWP }}
+                                                    <small id="enpwp_upload" class="form-text text-muted">
+                                                        {{ form.ENPWP.help_text}}
+                                                    </small>
+                                                </div>
+                                                </br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Swafoto
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body" >
+                                        <div class="mb-3" class="form-group">
+                                            <label>Swafoto</label>
+                                            <div id="cameraOne" class="form-row">
+                                            </div>
+                                            {{ form.Swafoto.help_text}}
+                                            </br>
+                                            <input type=button value="Take Snapshot" onClick="takeSnapshotOne()"
+                                                   id="snapshotOne" name="snapshotOne" class="form-control">
+                                            </br>
+                                            <div id="resultsOne" class="form-row">Your captured image will appear here...</div>
+                                        </div>
+                                        <hr>
+                                        <div class="mb-3" class="form-group">
+                                            <label>Swafoto + E-KTP</label>
+                                            <div id="cameraTwo" class="form-row">
+                                            </div>
+                                            {{ form.SwafotoKTP.help_text}}
+                                            </br>
+                                            <input type=button value="Take Snapshot" onClick="takeSnapshotTwo()"
+                                                   id="snapshotTwo" name="snapshotTwo"class="form-control">
+                                            </br>
+                                            <div id="resultsTwo" class="form-row">Your captured image will appear here...</div>
+                                        </div>
+                                        </hr>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-center">
+                        <div class="main_footer">
+                            <a href="{% url 'account:detail-account'%}">
+                                <label class="btn btn-info">
+                                    Batal
+                                </label>
+                            </a>
+                            <button class="btn btn-primary" name="save-profile" id="save-profile">
+                                Simpan
+                            </button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script language="JavaScript">
+                Webcam.set({
+                    width: 400,
+                    height: 320,
+                    image_format: 'jpeg',
+                    jpeg_quality: 100
+                });
+                Webcam.attach( '#cameraOne' );
+                        var timer = null;
+
+                function takeSnapshotOne() {
+                    Webcam.snap( function(data_uri) {
+                        document.getElementById('resultsOne').innerHTML =
+                            '<img src="'+data_uri+'" id="Swafoto" name="Swafoto"/>' +
+                            '<input type="hidden" id="Swafoto" name="Swafoto" value="'+data_uri+'">';
+                    } );
+                }
+
+                Webcam.attach( '#cameraTwo' );
+                        var timer = null;
+
+                function takeSnapshotTwo() {
+                    Webcam.snap( function(data_uri) {
+                        document.getElementById('resultsTwo').innerHTML =
+                            '<input type="image"  src="'+data_uri+'" id="SwafotoKTP" name="SwafotoKTP"/>' +
+                            '<input type="hidden" id="SwafotoKTP" name="SwafotoKTP" value="'+data_uri+'">';
+                    } );
+                }
+            </script>
+
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

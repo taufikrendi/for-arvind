@@ -1,0 +1,101 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{form.errors}}</strong>
+                    </div>
+                    <br>
+                    {% endif %}
+                    {% if messages %}
+                        <div class="alert alert-success">
+                            {% for message in messages %}
+                                <strong>{{ message }}</strong>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <form method="post" id="create-form" name="save-profile">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Penarikan Uang
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <div class="col-md-12">
+                                            <div class="business_item sm-m-top-50">
+                                                {% for obj in data %}
+                                                <div class="col-md-12">
+                                                    <label>Total Tabungan (Simpanan Wajib)</label>
+                                                    <h4>Rp. {{obj.deposit_member_payment_mandatory_amount|floatformat:'2'|intcomma}}</h4>
+                                                </div>
+                                                {% endfor %}
+                                                </br>
+                                                <div class="col-md-12">
+                                                    {{form.Jumlah.label}}
+                                                    {{form.Jumlah}}
+                                                    <small id="Total" class="form-text text-muted">
+                                                        {{ form.Jumlah.help_text }}
+                                                    </small>
+                                                </div>
+                                                </br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="{% url 'interactive:customer-financial'%}" class="btn btn-info m-top-20">
+                                            Batal
+                                        </a>
+                                        <button class="btn btn-primary m-top-20" name="save-profile" id="save-profile">
+                                            Simpan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

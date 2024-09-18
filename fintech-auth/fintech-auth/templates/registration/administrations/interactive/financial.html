@@ -1,0 +1,202 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                {% if messages %}
+                                    <div class="alert alert-success">
+                                        {% for message in messages %}
+                                            <strong>{{ message }}</strong>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for obj in data %}
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-8">
+                                <div class="col-md-12">
+                                    {% if obj.deposit_member_payment_principal_status %}
+                                        <h4>Total Tabungan Rp. {{ obj.deposit_member_payment_principal_amount|add:obj.deposit_member_payment_mandatory_amount|floatformat:'2'|intcomma }}</h4>
+                                    {% else %}
+                                        <h4>Total Tabungan Rp. 0,00 </h4>
+                                    {% endif %}
+                                    <h6>Total Pembagian SHU Rp. 0,00 - Periode dd/mm/yy</h6>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading">
+                                            <div class="panel-title text-center">
+                                                Progress Unit Usaha Koperasi
+                                            </div>
+                                        </div>
+                                        <div class="panel-body" >
+                                            <div class="mb-3 form-group row">
+                                                    <label for="email" class="col-sm-4 col-form-label">Status Anggota</label>
+                                                    <div class="col-sm-8" style="color: #990000">
+                                                        Calon Anggota - X
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading">
+                                            <div class="panel-title text-center">
+                                                Rangkuman Unit Usaha Koperasi
+                                            </div>
+                                        </div>
+                                        <div class="panel-body" >
+                                            <div class="mb-3 form-group row">
+                                                    <label for="email" class="col-sm-4 col-form-label">Status Anggota</label>
+                                                    <div class="col-sm-8" style="color: #990000">
+                                                        Calon Anggota - X
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-body">
+                                                <h3>
+                                                    Pembayaran
+                                                </h3>
+                                                <h6>Simpanan Wajib / Sukarela</h6>
+                                                <small class="text-muted">
+                                                    Transfer ke salah satu akun virtual berikut
+                                                </small>
+                                                <table class="text-finence text-center">
+                                                    <tbody class="text-center">
+                                                        <tr>
+                                                            <td>BNI Syariah &nbsp;</td>
+                                                            <td>028577499 &nbsp;</td>
+                                                            <td>
+                                                                <button onclick="navigator.clipboard.writeText('028577499')
+                                                                    .then(function(){
+                                                                    document.getElementById('insert1').innerHTML = '&#10003';
+                                                                    })">
+                                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                                </button>
+                                                                <span id="insert1">
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr></tr>
+                                                        <tr>
+                                                            <td>Mandiri Syariah &nbsp;</td>
+                                                            <td>62788899 &nbsp;</td>
+                                                            <td>
+                                                                <button onclick="navigator.clipboard.writeText('62788899')
+                                                                    .then(function(){
+                                                                    document.getElementById('insert2').innerHTML = '&#10003';
+                                                                    })">
+                                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                                </button>
+                                                                <span id="insert2">
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-body">
+                                            <div class="mb-12 form-group row">
+                                                <div class="col-sm-12">
+                                                    <h3>Tambah Modal Usaha Koperasi</h3>
+                                                    <a href="{% url 'deposit:create-deposit' %}" class="btn-xs btn-info text-right">Transfer Dana</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-body">
+                                            <div class="mb-12 form-group row">
+                                                <div class="col-sm-12">
+                                                    <h3>Pengajuan Pinjaman</h3>
+                                                    <a href="{% url 'loan:loan-initials' %}" class="btn-xs btn-info text-right">Ajukan</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-body">
+                                            <div class="mb-12 form-group row">
+                                                <div class="col-sm-12">
+                                                    <h3>Transfer Dana Lebih Mudah</h3>
+                                                    <h6>Ke Sesama Anggota</h6>
+                                                    <a href="#" class="btn-xs btn-info text-right">Transfer Dana</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-body">
+                                            <div class="mb-12 form-group row">
+                                                <div class="col-sm-12">
+                                                    <h3>Penarikan Dana</h3>
+                                                    <a href="{% url 'deposit:deposit-debit-claim' %}" class="btn-xs btn-info text-right">Penarikan Dana</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

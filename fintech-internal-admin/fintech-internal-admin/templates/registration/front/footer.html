@@ -1,0 +1,31 @@
+{% load static %}
+{% load humanize %}
+{% block content %}
+<section id="action" class="action bg-primary roomy-40">
+    <div class="container">
+        <div class="row">
+            <div class="maine_action">
+                <div class="col-md-12">
+                    <div class="action_item text-center">
+                        <h2 class="text-white text-uppercase">
+                            Investasi Sesuai Syariat hidup akan menjadi
+                            lebih tenang dan menyenangkan
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="contact" class="footer action-lage bg-black p-top-80">
+    <!--<div class="action-lage"></div>-->
+    <div class="main_footer fix text-center p-top-10 p-bottom-10 m-top-10">
+        <div class="col-md-12">
+            <p class="wow fadeInRight" data-wow-duration="1s">
+                {{ request.get_host }}
+            </p>
+            <br>
+        </div>
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,29 @@
+#Need IMPROVE ON
+Db speed using Rocksdb
+Long Run Consumer still failed.
+##
+DEBUG=TruE
+
+SECRET_KEY = '0wy1a@9o7-j7jgc74e&)7l-ncmjgiv3*&gw$@hhleb*7q_+!zj'
+ENCRYPT_KEY = b'ziU-GwZ6-FgBmGeGnNudG34t_1tJase9Tu7j-TYxfGs='
+
+ALLOWED_HOSTS=.127.0.0.1,
+
+DATABASE_NAME = 'django-kafka'
+DATABASE_USER = ''
+DATABASE_PASSWORD = ''
+DATABASE_HOST = ''
+
+#HOST_ENDPOINT = '127.0.0.1'
+#SCHEMA_REGISTRY_URL = 'http://localhost:8081'
+
+##Start
+#schema secret = KDohaIOlmikTW+s7CS1ZK4PBS9+Rs6eUKW42/0BBjGKhCQoQMDnhsoO6fMr5ZZeE
+#schema key = VENATWOLOELN3LWG
+
+#schema.registry.url=https://psrc-41vyv.australia-southeast1.gcp.confluent.cloud
+#basic.auth.credentials.source=USER_INFO
+#basic.auth.user.info=VENATWOLOELN3LWG:KDohaIOlmikTW+s7CS1ZK4PBS9+Rs6eUKW42/0BBjGKhCQoQMDnhsoO6fMr5ZZeE
+##Stop
+https://github.com/billydh/python-avro-producer
+https://billydharmawan.com/tag/python/

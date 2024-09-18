@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d7e51dfd-c623-494b-85cb-78f435f0ad75" name="Default Changelist" comment="adding oauth2">
+      <changelist_data name="TAUFIK RENDI" email="taufik@disindo.co.id" />
+      <change afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/adapters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/routers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/routers/transaction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/schemes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Apps/py/old_fintech/.idea/fintech.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Apps/py/old_fintech/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Apps/py/old_fintech/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Apps/py/old_fintech/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Apps/py/old_fintech/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Apps/py/old_fintech/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Apps/py/old_fintech/fintech/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Apps/py/old_fintech/fintech/celery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Apps/py/old_fintech/fintech/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Apps/py/old_fintech/fintech/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/adapters.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/adapters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/utils/generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/routers/deposit.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/routers/deposit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/schemes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/deposits/schemes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/excep/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/excep/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/kafka_connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/kafka_connector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/route/routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/route/routers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-funds/fintech-funds/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-funds/fintech-funds/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/autocomplete.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/autocomplete.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/autocomplete.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/base.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/base.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/changelists.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/changelists.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/changelists.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/changelists.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/dashboard.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/dashboard.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/fonts.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/fonts.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/forms.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/forms.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/login.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/login.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/nav_sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/nav_sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/nav_sidebar.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/nav_sidebar.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/responsive.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/responsive.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/responsive_rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/responsive_rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/responsive_rtl.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/responsive_rtl.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/rtl.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/rtl.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/vendor/select2/LICENSE-SELECT2.md.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/vendor/select2/LICENSE-SELECT2.md.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/vendor/select2/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/vendor/select2/select2.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/vendor/select2/select2.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/vendor/select2/select2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/vendor/select2/select2.min.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/vendor/select2/select2.min.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/widgets.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/widgets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/css/widgets.css.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/css/widgets.css.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/fonts/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/fonts/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/fonts/LICENSE.txt.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/fonts/LICENSE.txt.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/fonts/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/fonts/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/fonts/README.txt.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/fonts/README.txt.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/LICENSE.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/LICENSE.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/README.txt.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/README.txt.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/calendar-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/calendar-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/calendar-icons.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/calendar-icons.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/gis/move_vertex_off.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/gis/move_vertex_off.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/gis/move_vertex_off.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/gis/move_vertex_on.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/gis/move_vertex_on.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/gis/move_vertex_on.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-addlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-addlink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-addlink.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-addlink.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-alert.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-alert.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-alert.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-alert.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-calendar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-calendar.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-calendar.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-calendar.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-changelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-changelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-changelink.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-changelink.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-clock.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-clock.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-deletelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-deletelink.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-deletelink.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-no.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-no.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-no.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-no.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-unknown-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-unknown-alt.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-unknown-alt.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-unknown.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-unknown.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-unknown.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-unknown.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-viewlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-viewlink.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-viewlink.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-yes.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-yes.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/icon-yes.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/icon-yes.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/inline-delete.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/inline-delete.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/inline-delete.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/inline-delete.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/search.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/search.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/selector-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/selector-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/selector-icons.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/selector-icons.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/sorting-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/sorting-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/sorting-icons.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/sorting-icons.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/tooltag-add.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/tooltag-add.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/tooltag-add.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/tooltag-add.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/tooltag-arrowright.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/img/tooltag-arrowright.svg.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/img/tooltag-arrowright.svg.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/SelectBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/SelectBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/SelectBox.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/SelectBox.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/SelectFilter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/SelectFilter2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/SelectFilter2.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/SelectFilter2.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/actions.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/actions.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/actions.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/actions.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/actions.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/actions.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/admin/DateTimeShortcuts.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/admin/DateTimeShortcuts.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/admin/RelatedObjectLookups.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/admin/RelatedObjectLookups.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/autocomplete.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/autocomplete.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/calendar.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/calendar.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/cancel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/cancel.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/cancel.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/change_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/change_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/change_form.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/change_form.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/collapse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/collapse.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/collapse.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/collapse.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/collapse.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/collapse.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/collapse.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/core.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/core.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/inlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/inlines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/inlines.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/inlines.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/inlines.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/inlines.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/inlines.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/inlines.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/jquery.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/jquery.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/jquery.init.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/jquery.init.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/nav_sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/nav_sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/nav_sidebar.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/nav_sidebar.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/popup_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/popup_response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/popup_response.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/popup_response.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/prepopulate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/prepopulate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/prepopulate.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/prepopulate.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/prepopulate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/prepopulate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/prepopulate.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/prepopulate.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/prepopulate_init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/prepopulate_init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/prepopulate_init.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/prepopulate_init.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/urlify.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/urlify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/urlify.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/urlify.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/jquery/LICENSE.txt.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/jquery/LICENSE.txt.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/jquery/jquery.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/jquery/jquery.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/jquery/jquery.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/jquery/jquery.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/LICENSE.md.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/LICENSE.md.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/af.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/af.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/af.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ar.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ar.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/az.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/az.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/az.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/bg.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/bg.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/bn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/bn.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/bn.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/bs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/bs.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/bs.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ca.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ca.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/cs.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/cs.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/da.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/da.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/de.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/de.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/dsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/dsb.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/dsb.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/el.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/el.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/en.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/en.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/es.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/es.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/et.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/et.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/et.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/eu.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/eu.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/fa.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/fa.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/fi.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/fi.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/fr.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/fr.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/gl.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/gl.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/he.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/he.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/he.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hi.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hi.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hr.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hr.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hsb.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hsb.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hu.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hu.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/hy.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/hy.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/id.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/id.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/is.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/is.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/is.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/it.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/it.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ja.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ja.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ka.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ka.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/km.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/km.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/km.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ko.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ko.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/lt.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/lt.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/lv.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/lv.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/mk.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/mk.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ms.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ms.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/nb.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/nb.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ne.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ne.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ne.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/nl.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/nl.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/pl.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/pl.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ps.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ps.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ps.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/pt-BR.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/pt-BR.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/pt.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/pt.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ro.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ro.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/ru.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/ru.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sk.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sk.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sl.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sl.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sq.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sq.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sq.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sr-Cyrl.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sr-Cyrl.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sr.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sr.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/sv.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/sv.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/th.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/th.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/tk.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/tk.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/tk.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/tr.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/tr.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/uk.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/uk.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/vi.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/vi.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/zh-CN.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/zh-CN.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/i18n/zh-TW.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/i18n/zh-TW.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/select2.full.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/select2.full.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/select2/select2.full.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/select2/select2.full.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/xregexp/LICENSE.txt.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/xregexp/LICENSE.txt.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/xregexp/xregexp.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/xregexp/xregexp.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/admin/js/vendor/xregexp/xregexp.min.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/admin/js/vendor/xregexp/xregexp.min.js.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/api/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/api/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/api/endpoints.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/api/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/api/schemes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/api/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/signals.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/deposit/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/interactive/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/interactive/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/interactive/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/interactive/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/interactive/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/interactive/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/interactive/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/interactive/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/internal/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/internal/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/internal/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/internal/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/internal/signals.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/internal/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/internal/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/internal/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/loan/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/signals.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/membership/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/account/account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/account/bank.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/account/create_corporate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/account/password.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/account/provinces.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/account/update_bank.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/account/update_profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/deposit/transactions/approval.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/deposit/transactions/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/deposit/transactions/debit_claim.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/deposit/transactions/evidence_upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/deposit/transactions/incoming.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/deposit/transactions/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/deposit/transactions/transit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/interactive/financial.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/interactive/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/internal/customer/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/internal/verify/approval.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/internal/verify/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/loan/initials.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/utils/confirm_password.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/utils/cordinates.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/activation_email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/change_password_user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/registration_success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/registrations.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/reset_pass.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/reset_password_email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/front/used_link.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/trails/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/trails/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/trails/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/trails/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/trails/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/trails/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/trails/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/trails/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/enums_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/enums_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/routers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/utils/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/consumer/ekyc_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/consumer/ekyc_score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/continuous.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/management/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/management/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/management/commands/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/management/commands/all_long_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/management/commands/all_long_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/management/commands/consumer_ekyc_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/management/commands/consumer_ekyc_score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/management/commands/produce_ekyc_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/management/commands/produce_ekyc_score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0002_auto_20210619_2258.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0003_auto_20210619_2300.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0004_auto_20210619_2303.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0005_accountmemberverifystatus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0006_auto_20210619_2322.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0007_auto_20210620_0003.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0008_auto_20210620_0032.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0009_accountlogresetpassword.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0010_auto_20210620_1412.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0011_accountuserpin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0012_auto_20210622_0338.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0013_auto_20210622_0519.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0014_auto_20210622_0836.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0015_auto_20210623_0855.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0016_accountlogchangepassword.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0017_auto_20210624_0255.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0018_accountmemberverifystatus_account_member_verify_status_dukcapil_score.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0019_accountmemberverifystatus_account_member_verify_status_user_nik.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0020_auto_20210625_2209.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/migrations/0021_auto_20210625_2224.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/account/validators.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/kafka_connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/kafka_connector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/route/routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/route/routers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/migrations/0002_lognodeflux.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/migrations/0002_lognodeflux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-scheduler/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-scheduler/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/adapters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/transaction/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/routers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/routers/deposit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/deposits/schemes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/excep/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/excep/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/kafka_connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/kafka_connector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/route/routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/route/routers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fintech-transactional/fintech-transactional/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="TAUFIK RENDI &lt;taufik@disindo.co.id&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../fintech-scheduler" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1m03PNMlqhmyacwa6nXNerqs4RM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fintech-transactional/fintech-transactional" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../fintech-transactional/fintech-transactional" />
+      <recent name="$PROJECT_DIR$/../fintech-funds/fintech-funds/utils" />
+      <recent name="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin/templates/registration/administrations/deposit" />
+      <recent name="$PROJECT_DIR$/../fintech-funds/fintech-funds/account" />
+      <recent name="$PROJECT_DIR$/../fintech-funds/fintech-funds/loan" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fintech/utils" />
+      <recent name="$PROJECT_DIR$/../fintech-funds/fintech-funds/utils" />
+      <recent name="$PROJECT_DIR$/../fintech-internal-admin/fintech-internal-admin" />
+      <recent name="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils" />
+      <recent name="$PROJECT_DIR$/../fintech-scheduler/fintech_scheduler/utils/management/commands" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="fintech-auth" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7e51dfd-c623-494b-85cb-78f435f0ad75" name="Default Changelist" comment="" />
+      <created>1608616655521</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608616655521</updated>
+      <workItem from="1621526253865" duration="22196000" />
+      <workItem from="1621855912738" duration="597000" />
+      <workItem from="1621857527676" duration="1583000" />
+      <workItem from="1621879350817" duration="36000" />
+      <workItem from="1621959056678" duration="13465000" />
+      <workItem from="1622209262728" duration="555000" />
+      <workItem from="1622209891081" duration="1223000" />
+      <workItem from="1622215470501" duration="6441000" />
+      <workItem from="1622300920316" duration="18717000" />
+      <workItem from="1622473262076" duration="34574000" />
+      <workItem from="1622741653799" duration="6055000" />
+      <workItem from="1622754638430" duration="872000" />
+      <workItem from="1622791452557" duration="4669000" />
+      <workItem from="1622823545723" duration="4241000" />
+      <workItem from="1623094693294" duration="11360000" />
+      <workItem from="1623245170127" duration="8253000" />
+      <workItem from="1623333109273" duration="5846000" />
+      <workItem from="1623418710188" duration="6554000" />
+      <workItem from="1623478998227" duration="4133000" />
+      <workItem from="1623594089254" duration="7269000" />
+      <workItem from="1623604225667" duration="12272000" />
+      <workItem from="1623768531333" duration="13030000" />
+      <workItem from="1623855884746" duration="7104000" />
+      <workItem from="1623942001879" duration="3746000" />
+      <workItem from="1623945816503" duration="6162000" />
+      <workItem from="1624028921896" duration="23984000" />
+      <workItem from="1624133752326" duration="170000" />
+      <workItem from="1624133951540" duration="4243000" />
+      <workItem from="1624139208222" duration="12098000" />
+      <workItem from="1624185467903" duration="24670000" />
+      <workItem from="1624328412208" duration="76000" />
+      <workItem from="1624328562972" duration="25775000" />
+      <workItem from="1624436881201" duration="5601000" />
+      <workItem from="1624499494475" duration="14244000" />
+      <workItem from="1624541548385" duration="13970000" />
+      <workItem from="1624589715652" duration="599000" />
+      <workItem from="1625058010387" duration="12112000" />
+      <workItem from="1625143704274" duration="846000" />
+      <workItem from="1625150832603" duration="708000" />
+      <workItem from="1625156723203" duration="3193000" />
+      <workItem from="1625282779719" duration="16729000" />
+      <workItem from="1625452630895" duration="25200000" />
+      <workItem from="1625503439859" duration="309000" />
+      <workItem from="1625503961244" duration="8008000" />
+      <workItem from="1625540465717" duration="18749000" />
+      <workItem from="1625577233248" duration="24473000" />
+      <workItem from="1625653852786" duration="18764000" />
+      <workItem from="1625726917976" duration="23847000" />
+      <workItem from="1625898087122" duration="14766000" />
+      <workItem from="1625947859756" duration="1790000" />
+      <workItem from="1625986326644" duration="9901000" />
+      <workItem from="1626067140344" duration="4396000" />
+      <workItem from="1626071986007" duration="12455000" />
+      <workItem from="1626085678596" duration="7454000" />
+      <workItem from="1626158265595" duration="598000" />
+      <workItem from="1626187324433" duration="12039000" />
+      <workItem from="1626286162118" duration="12273000" />
+      <workItem from="1627166781652" duration="107000" />
+      <workItem from="1627229673519" duration="598000" />
+      <workItem from="1627317108477" duration="1798000" />
+      <workItem from="1627423781478" duration="12845000" />
+      <workItem from="1627495604926" duration="8492000" />
+      <workItem from="1627510878875" duration="5762000" />
+      <workItem from="1627582186381" duration="23842000" />
+      <workItem from="1627637550466" duration="2532000" />
+      <workItem from="1627700383114" duration="40208000" />
+      <workItem from="1627881725690" duration="700000" />
+      <workItem from="1627882688059" duration="12584000" />
+      <workItem from="1627949381823" duration="20298000" />
+      <workItem from="1627976724637" duration="2045000" />
+      <workItem from="1628015052599" duration="20557000" />
+      <workItem from="1628104636818" duration="24720000" />
+      <workItem from="1628172413554" duration="1471000" />
+      <workItem from="1628202576954" duration="20188000" />
+      <workItem from="1628537142243" duration="45966000" />
+      <workItem from="1628708335441" duration="9450000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding oauth2&#10;- minus Refreshing token, cookies, csrf." />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/fintech$manage.coverage" NAME="manage Coverage Results" MODIFIED="1625555770613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

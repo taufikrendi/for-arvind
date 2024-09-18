@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: uvicorn asgi:app --debug --reload --port 5000 --host 0.0.0.0
+    volumes:
+      - ./fintech-auth/:/usr/src/fintech-auth/
+    ports:
+      - 5000:5000
+
+networks:
+  default:
+    name: sample-network

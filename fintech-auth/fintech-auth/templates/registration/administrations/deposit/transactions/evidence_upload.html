@@ -1,0 +1,120 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{form.errors}}</strong>
+                    </div>
+                    <br>
+                    {% endif %}
+                    {% if messages %}
+                        <div class="alert alert-success">
+                            {% for message in messages %}
+                                <strong>{{ message }}</strong>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <form method="post" id="create-form" name="create-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        {% for data in data %}
+                        <div class="row">
+                            <div class="main_business">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Pembayaran Setoran Pokok / Wajib
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <div class="col-md-12">
+                                            <div class="business_item sm-m-top-50">
+                                                <div class="col-md-12">
+                                                    <label>No. Transaksi</label>
+                                                    <h3 class="text-right">{{data.deposit_member_trans_code}}</h3>
+                                                </div>
+                                                </br>
+                                                <div class="col-md-12">
+                                                    <label>Setoran Pokok</label>
+                                                    <h3 class="text-right">Rp. {{data.deposit_member_trans_principal_amount|floatformat:'2'|intcomma}}</h3>
+                                                </div>
+                                                </br>
+                                                <div class="col-md-12">
+                                                    <label>Setoran Wajib</label>
+                                                    <h3 class="text-right">Rp. {{data.deposit_member_trans_mandatory_amount|floatformat:'2'|intcomma}}</h3>
+                                                </div>
+                                                </br>
+                                                <div class="col-md-12">
+                                                    <label>Kode Unik</label>
+                                                    <h3 class="text-right">{{data.deposit_member_trans_unique_code_amount|floatformat}}</h3>
+                                                </div>
+                                                </br>
+                                                <div class="col-md-12">
+                                                    <label>Total</label>
+                                                    <h3 class="text-right">Rp. {{data.deposit_member_trans_gt_amount|floatformat:'2'|intcomma}}</h3>
+                                                </div>
+                                                </br>
+                                                <div class="col-md-12">
+                                                    {{form.Unggah.label}}
+                                                    {{form.Unggah}}
+                                                    <small id="profile_name" class="form-text text-muted">
+                                                        {{ form.Unggah.help_text }}
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="{% url 'interactive:customer-transaction'%}" class="btn btn-info m-top-20">
+                                            Batal
+                                        </a>
+                                        <button class="btn btn-primary m-top-20" name="save-profile" id="save-profile">
+                                            Simpan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        </div>
+                        {% endfor %}
+                    </form>
+                </div>
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

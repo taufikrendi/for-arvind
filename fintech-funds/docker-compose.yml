@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: uvicorn asgi:app --debug --reload --port 5002 --host 0.0.0.0
+    volumes:
+      - ./fintech-funds/:/usr/src/fintech-funds/
+    ports:
+      - 5002:5002
+#    networks:
+#      - sample-network
+#  redis:
+#    image: redis
+#    networks:
+#      - sample-network
+#
+networks:
+  default:
+    name: sample-network

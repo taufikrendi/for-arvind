@@ -1,0 +1,180 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                {% if messages %}
+                                    <div class="alert alert-success">
+                                        {% for message in messages %}
+                                            <strong>{{ message }}</strong>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Verifikasi Pinjaman Anggota
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body" >
+                                        <div>
+                                            <form method="post">
+                                                {% csrf_token %}
+                                                <div class="text-center">
+                                                    <label>Ada Pinjaman di Tempat Lain?</label>
+                                                    <select id="payment" name="payment">
+                                                        <option selected="selected" disabled>--Select--</option>
+                                                        <option value="True">Yes</option>
+                                                        <option value="False">No</option>
+                                                    </select>
+                                                    <label>Ada Jaminan?</label>
+                                                    <select id="guarantee" name="payment">
+                                                        <option selected="selected" disabled>--Select--</option>
+                                                        <option value="True">Yes</option>
+                                                        <option value="False">No</option>
+                                                    </select>
+                                                    &nbsp;
+                                                    <label>Cari Data</label>
+                                                    <input type="text" id="search" name="search" placeholder="e-mail / nama">
+                                                     &nbsp;
+                                                    <button class="btn-info">Filter</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <br>
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr class="text-center">
+                                                            <td>Email</td>
+                                                            <td>No. Anggota</td>
+                                                            <td>Fullname</td>
+                                                            <td>Total Pinjam</td>
+                                                            <td>Lama Pengembalian</td>
+                                                            <td>Jaminan</td>
+                                                            <td>Credit Score</td>
+                                                            <td>Ada Pinjaman lain</td>
+                                                            <td>Verifikasi</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-center">
+                                                    {% for obj in data_list %}
+                                                        <tr>
+                                                            <td>{{obj.email}}</td>
+                                                            <td>{{obj.account_profile_cooperative_number}}</td>
+                                                            <td>{{obj.first_name}}</td>
+                                                            <td>Rp. {{obj.loan_submission_amount|floatformat:2|intcomma}}</td>
+                                                            <td>{{obj.loan_submission_installment_month}} Months</td>
+                                                            <td>{{obj.loan_submission_assurance}}</td>
+                                                            <td>arief</td>
+                                                            <td>arief</td>
+                                                            <td>
+                                                                <div class="card" style="width: 10rem;">
+                                                                    <ul class="list-group list-group-flush">
+                                                                        <li class="list-group-item">
+                                                                            <a href="{% url 'loan:employment' %}">Pekerjaan</a>
+                                                                            <i class="fa fa-check-circle"
+                                                                               style="color: #4cae4c"></i>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <a href="{% url 'loan:items' %}">Barang</a>
+                                                                            <i class="fa fa-check-circle"
+                                                                               style="color: #4cae4c"></i>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <a href="{% url 'loan:appraisal' %}">Appraisal</a>
+                                                                            <i class="fa fa-check-circle"
+                                                                               style="color: #4cae4c"></i>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <a href="{% url 'loan:approval' %}" >Approval</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    {% empty %}
+                                                        <tr>
+                                                            <td colspan="14">
+                                                                Tidak Ada Data
+                                                            </td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </form>
+                                        <div class="text-center">
+                                              <ul class="pagination">
+                                                {% if data_list.has_previous %}
+                                                  <li><a href="?page={{ data_list.previous_page_number }}">&laquo;</a></li>
+                                                {% else %}
+                                                  <li class="disabled"><span>&laquo;</span></li>
+                                                {% endif %}
+                                                {% for i in data_list.paginator.page_range %}
+                                                  {% if data_list.number == i %}
+                                                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                                  {% else %}
+                                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                                  {% endif %}
+                                                {% endfor %}
+                                                {% if data_list.has_next %}
+                                                  <li><a href="?page={{ data_list.next_page_number }}">&raquo;</a></li>
+                                                {% else %}
+                                                  <li class="disabled"><span>&raquo;</span></li>
+                                                {% endif %}
+                                              </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

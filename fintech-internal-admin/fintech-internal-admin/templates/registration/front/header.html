@@ -1,0 +1,76 @@
+{% load static %}
+{% load humanize %}
+{% block content %}
+<nav class="navbar navbar-default bootsnav navbar-fixed">
+    <div class="navbar-top bg-grey fix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="navbar-callus text-left sm-text-center">
+                        <ul class="list-inline">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="navbar-socail text-right sm-text-center">
+                        <ul class="list-inline">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+
+    <div class="container">
+        <!-- Start Header Navigation -->
+
+        <!-- End Header Navigation -->
+
+        <!-- navbar menu -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                    {% for group in user.groups.all %}
+                        <li><a href="{% url 'account:dashboard' %}">Dashboard</a></li>
+                        {% if group.name == "Operator" %}
+                            <li><a href="{% url 'account:all-member'%}">All Member</a></li>
+                            <li><a href="{% url 'transaction:all-transaction'%}">Approval Trans</a></li>
+                            <li><a href="#">Zakat</a></li>
+                            <li><a href="#">PPOB</a></li>
+                            <li><a href="{% url 'deposits:all-deposit-product' %}">Create Product</a>
+                        {% elif group.name == "Analyst" %}
+                            <li><a href="{% url 'loan:all-loan' %}">Verify Loans</a></li>
+                            <li><a href="#">Warning!</a></li>
+                            <li><a href="#">Wan Prestasi</a></li>
+                        {% elif group.name == "Finance" %}
+                            <li><a href="#">Jurnal</a></li>
+                            <li><a href="#">Pembukuan</a></li>
+                        {% elif group.name == "Dashboard" %}
+                            <li><a href="#">Chart</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    <li><a href="{% url 'account:logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="/">Login</a></li>
+                {% endif %}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+{% endblock %}

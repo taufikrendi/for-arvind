@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <!-- di isi css dan javascript jquery -->
+        <title></title>
+        <link>
+        <!-- khusus untuk jquery -->
+        <script></script>
+        <!-- khusus untuk jquery -->
+    </head>
+    <body>
+        <!-- isi dari body akan di pisah pada file lainnya. -->
+        {% block content %}
+        {% endblock %}
+        <!-- JS includes -->
+        {% block javascript %}
+        <script></script>
+        {% endblock %}
+        <!-- footer juga akan di dipisah pada file lainnya. -->
+    </body>
+</html>

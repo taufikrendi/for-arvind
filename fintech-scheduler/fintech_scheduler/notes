@@ -1,0 +1,21 @@
+# global response
+    # try:
+    #     my_headers = {'Authorization': 'NODEFLUX-HMAC-SHA256 '
+    #                                    'Credential=2JU393GT82FJR97T1HGW91CRG/20210624/nodeflux.api.v1beta1.ImageAnalytic/StreamImageAnalytic, '
+    #                                    'SignedHeaders=x-nodeflux-timestamp, Signature=59181286b93b8b80b0e87257a7d3a7e5bfe2d11a7b3dcdb314b02e22734e95b7',
+    #                   'x-nodeflux-timestamp': '20210624T060005Z',
+    #                   'Content-Type': 'application/json'}
+    #     response = requests.get("https://api.cloud.nodeflux.io/v1/jobs/4145dd10dc94788fa72a5e000c15ef19a58d1c9b29f4271dGIYDEMJNGA3C2MRU", headers=my_headers).json()
+    #     score = response['job']['result']['result'][0]['face_match']['similarity']
+    #     data = AccountMemberVerifyStatus.objects.filter(
+    #         account_member_verify_status_user_related='robotsapk1@gmail.com',
+    #         account_member_verify_status_dukcapil_score__isnull=True
+    #         ).update(
+    #             account_member_verify_status_dukcapil_score=score
+    #         )
+    #     logger.info('Success Get Data From Nodeflux with id'.format(response))
+    #     return data
+    # except(TypeError, ValueError, OverflowError):
+    #     logger.error('Failed Get Data From Nodeflux with id'.format(response))
+    # finally:
+    #     logger.error('Long Run Get Results Stop!')

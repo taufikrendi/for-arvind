@@ -1,0 +1,325 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+        <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div><!-- End off row -->
+                </div><!-- End off container -->
+            </section>
+
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-12">
+                                {% if form.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{form.errors}}</strong>
+                                </div>
+                                <br>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for obj in data_list %}
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_business">
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading">
+                                            <div class="panel-title text-center">
+                                                Data yang Sudah Tervalidasi
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <div class="mb-12 form-group row text-center">
+                                                <div class="col-sm-4">
+                                                    Phone Number Here
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    Digital Sign Here
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    Bank Account Here
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_business">
+                                <div class="col-md-6">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading">
+                                            <div class="panel-title text-center">
+                                                Data Pribadi
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Email</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.username}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="phone" class="col-sm-4 col-form-label">No. Telp</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.accountprofile.account_profile_phone_number}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="has_company" class="col-sm-4 col-form-label">
+                                                    Tipe Akun
+                                                </label>
+                                                <div class="col-sm-4">
+                                                    <a>
+                                                        Personal
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="name" class="col-sm-4 col-form-label">Tgl Mendaftar</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.date_joined|date:"j-m-Y"}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">NIK</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.accountprofile.account_profile_identification_number}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">NPWP</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.accountprofile.account_profile_tax_identification_number}}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <div class="panel-title text-center">
+                                                Data Diri
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Nama Lengkap</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.first_name}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                                                {% if obj.accountprofile.account_profile_sex == 'Sex.ML' %}
+                                                <div class="col-sm-4">
+                                                    <a>Laki-Laki</a>
+                                                </div>
+                                                {% else %}
+                                                <div class="col-sm-4">
+                                                    <a>Wanita</a>
+                                                </div>
+                                                {% endif %}
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Provinsi</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.accountprofile.account_profile_address_prov}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Kecamatan</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.accountprofile.account_profile_address_district}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Kelurahan</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.accountprofile.account_profile_address_sub_district}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Alamat</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.accountprofile.account_profile_address}}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_business">
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading">
+                                            <div class="panel-title text-center">
+                                                Foto E-KTP & NPWP
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <div class="mb-12 form-group row text-center">
+                                                <div class="col-sm-6">
+                                                    <img src='{{obj.accountprofile.account_profile_eidentity|slice:"2:"|cut:"]"}}'
+                                                    width="400" height="250">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                     <img src='{{obj.accountprofile.account_profile_enpwp|slice:"2:"|cut:"]"}}'
+                                                     width="400" height="250">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_business">
+                                <div class="col-md-12">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading">
+                                            <div class="panel-title text-center">
+                                                Foto Selfie & E-KTP
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <div class="mb-12 form-group row text-center">
+                                                <div class="col-sm-6">
+                                                    <img src='{{obj.accountprofile.account_profile_selfie}}'
+                                                    width="400" height="250">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                     <img src='{{obj.accountprofile.account_profile_selfie_eidentity}}'
+                                                     width="400" height="250">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_business">
+                                <div class="col-md-5">
+                                    <div class="panel panel-info" >
+                                        <div class="panel-heading">
+                                            <div class="panel-title text-center">Informasi Perbankan</div>
+                                        </div>
+
+                                        <div class="panel-body" >
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Nama Pemilik Rekening</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.bank_account_user_related.account_bank_user_name}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">No Rekening</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.bank_account_user_related.account_bank_user_number}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 form-group row">
+                                                <label for="email" class="col-sm-4 col-form-label">Nama Bank</label>
+                                                <div class="col-sm-4">
+                                                    <a>{{obj.bank_account_user_related.account_bank_user_related_to_bank.bank_name}}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="main_business">
+                                <div class="col-md-12">
+                                    <div class="mb-12 form-group row">
+                                        <label>Status Revisi: </label>
+                                        <b>
+                                            {{obj.verify_status_user_related.member_verify_status_revision_profile}}x
+                                        </b>
+                                    </div>
+                                    <div class="mb-12 form-group row">
+                                        {{ form.Verifikasi.label_tag }}
+                                        {% for radio in form.Verifikasi %}
+                                            {{ radio }}
+                                        {% endfor %}
+                                        <br>
+                                        <small id="Verify" class="form-text text-muted">
+                                            {{ form.Verifikasi.help_text }}
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="main_business">
+                                <div class="col-md-12">
+                                    <div class="mb-12 form-group row">
+                                        <a href="{% url 'membership:membership-list'%}" class="btn btn-warning">Kembali</a>
+                                        <button class="btn btn-info" id="save" name="save">Simpan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                {% endfor %}
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

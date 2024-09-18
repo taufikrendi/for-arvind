@@ -1,0 +1,27 @@
+{% load static %}
+{% block javascript %}
+<script>
+$(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('{% csrf_token %}').attr('content'),
+            'Authorization': 'Bearer token'
+        },
+    });
+    $("#Bank").select2({
+        placeholder: "Cari Bank",
+        minimumInputLength: 2,
+        width: '100%',
+        cache: false,
+        ajax: {
+            url: function (params) {
+                return 'http://127.0.0.1:5000/api/v1/banks/' + params.term;
+            },
+            type: "GET",
+            dataType: 'json',
+            delay: 250,
+        },
+    });
+});
+</script>
+{% endblock %}

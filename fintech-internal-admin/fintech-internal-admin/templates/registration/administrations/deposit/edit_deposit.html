@@ -1,0 +1,91 @@
+{% extends 'registration/front/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+{% include 'registration/front/preloader.html' %}
+    <div class="culmn">
+            <!--Home page style-->
+
+            {% include 'registration/front/header.html' %}
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features fix roomy-50">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{form.errors}}</strong>
+                    </div>
+                    <br>
+                    {% endif %}
+                    {% if messages %}
+                        <div class="alert alert-success">
+                            {% for message in messages %}
+                                <strong>{{ message }}</strong>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <form method="post" id="create-form" name="create-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                            <div class="main_business">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <div class="panel panel-info" >
+                                    <div class="panel-heading">
+                                        <div class="panel-title text-center">
+                                            Ubah Produk
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-md-12">
+                                            <div class="business_item sm-m-top-50">
+                                                {% for field in form %}
+                                                {{ field.label_tag }}
+                                                {% for data in data %}
+                                                {% render_field field class="form-control" value=data %}
+                                                {% endfor %}
+                                                <i>{{ field.help_text }}</i>
+                                                </br>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="{% url 'deposits:all-deposit-product' %}"
+                                           class="btn btn-warning m-top-20">Kembali</a>
+                                        <button class="btn btn-primary m-top-20">
+                                            Simpan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="action" class="action bg-primary roomy-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="maine_action">
+                            <div class="col-sm-12">
+                                <div class="action_item text-center">
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% include 'registration/front/footer.html' %}
+        </div>
+{% endblock %}

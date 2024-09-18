@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../fintech-auth" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../fintech-funds" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../fintech-scheduler" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../fintech-transactional" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../pgsql_docker/bitnami-docker-postgresql" vcs="Git" />
+  </component>
+</project>

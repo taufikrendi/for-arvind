@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../pgsql_docker/bitnami-docker-postgresql/.idea/bitnami-docker-postgresql.iml" filepath="$PROJECT_DIR$/../../pgsql_docker/bitnami-docker-postgresql/.idea/bitnami-docker-postgresql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../pgsql_docker/dokaf/.idea/dokaf.iml" filepath="$PROJECT_DIR$/../../pgsql_docker/dokaf/.idea/dokaf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-auth/.idea/fintech-auth.iml" filepath="$PROJECT_DIR$/../fintech-auth/.idea/fintech-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-funds/.idea/fintech-funds.iml" filepath="$PROJECT_DIR$/../fintech-funds/.idea/fintech-funds.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/fintech-internal-admin.iml" filepath="$PROJECT_DIR$/.idea/fintech-internal-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-scheduler/.idea/fintech-scheduler.iml" filepath="$PROJECT_DIR$/../fintech-scheduler/.idea/fintech-scheduler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fintech-transactional/.idea/fintech-transactional.iml" filepath="$PROJECT_DIR$/../fintech-transactional/.idea/fintech-transactional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../trial_apps_git/docker-plantix.challenge/.idea/plantinx.challenge.iml" filepath="$PROJECT_DIR$/../../trial_apps_git/docker-plantix.challenge/.idea/plantinx.challenge.iml" />
+    </modules>
+  </component>
+</project>

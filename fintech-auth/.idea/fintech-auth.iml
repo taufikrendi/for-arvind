@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="fintech-internal-admin" />
+    <orderEntry type="module" module-name="fintech-scheduler" />
+    <orderEntry type="module" module-name="old_fintech" />
+    <orderEntry type="module" module-name="fintech-transactional" />
+    <orderEntry type="module" module-name="fintech-funds" />
+    <orderEntry type="module" module-name="fintech-liveness" />
+    <orderEntry type="module" module-name="kafka" />
+  </component>
+  <component name="PyDocumentationSettings">
+    <option name="format" value="PLAIN" />
+    <option name="myDocStringFormat" value="Plain" />
+  </component>
+</module>
